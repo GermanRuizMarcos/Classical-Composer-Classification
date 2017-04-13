@@ -1,0 +1,1174 @@
+'''
+AUDIO CLASSICAL COMPOSER IDENTIFICATION BASED ON: 
+A SPECTRAL BANDWISE FEATURE-BASED SYSTEM
+'''
+import essentia 
+from essentia.standard import *
+import glob
+import numpy as np
+import arff
+from scipy import stats
+import collections
+import cv2
+import matplotlib
+import matplotlib.pyplot as plt
+
+
+#### gabor filters
+ 
+def build_filters():
+	 filters = []
+	 ksize = 31
+	 for theta in np.arange(0, np.pi, np.pi / 16):
+		 kern = cv2.getGaborKernel((ksize, ksize), 4.0, theta, 10.0, 0.5, 0, ktype=cv2.CV_32F)
+		 kern /= 1.5*kern.sum()
+		 filters.append(kern)
+	 return filters
+ 
+def process(img, filters):
+	 accum = np.zeros_like(img)
+	 for kern in filters:
+		 fimg = cv2.filter2D(img, cv2.CV_8UC3, kern)
+		 np.maximum(accum, fimg, accum)
+	 return accum
+
+###
+
+
+# Dataset creation with specific attributes (spectral features) and a specific class (composer's name)
+
+'''
+Audio files trasformed into the frequency domain through a 1024-sample STFT with 50% overlap. 
+The spectrum is divided into 50 mel-spaced bands.
+'''
+
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/bach/*.wav")
+fft = FFT()
+melbands = MelBands(numberBands = 50)
+
+flatness = FlatnessDB()
+rolloff = RollOff()
+centroid = SpectralCentroidTime()
+flux = Flux() 
+energy = EnergyBand()
+zero = ZeroCrossingRate()
+spectrum = Spectrum()
+w = Windowing(type = 'hann')
+mfcc = MFCC()
+silence = SilenceRate(thresholds = [0.01])
+
+
+f = open('definitive_train.txt', 'wb')
+f.write('@RELATION "composer dataset"\n')
+f.write('\n')
+f.write('@ATTRIBUTE filename STRING\n')
+f.write('@ATTRIBUTE MFCC-0 REAL\n')
+f.write('@ATTRIBUTE MFCC-1 REAL\n')
+f.write('@ATTRIBUTE MFCC-2 REAL\n')
+f.write('@ATTRIBUTE MFCC-3 REAL\n')
+f.write('@ATTRIBUTE MFCC-4 REAL\n')
+f.write('@ATTRIBUTE MFCC-5 REAL\n')
+f.write('@ATTRIBUTE MFCC-6 REAL\n')
+f.write('@ATTRIBUTE MFCC-7 REAL\n')
+f.write('@ATTRIBUTE MFCC-8 REAL\n')
+f.write('@ATTRIBUTE MFCC-9 REAL\n')
+f.write('@ATTRIBUTE MFCC-10 REAL\n')
+f.write('@ATTRIBUTE MFCC-11 REAL\n')
+f.write('@ATTRIBUTE MFCC-12 REAL\n')
+f.write('@ATTRIBUTE flatness-mean REAL\n')
+f.write('@ATTRIBUTE flatness-variance REAL\n')
+f.write('@ATTRIBUTE rolloff-mean REAL\n')
+f.write('@ATTRIBUTE rolloff-variance REAL\n')
+f.write('@ATTRIBUTE centroid-mean REAL\n')
+f.write('@ATTRIBUTE centroid-variance REAL\n')
+f.write('@ATTRIBUTE flux-mean REAL\n')
+f.write('@ATTRIBUTE flux-variance REAL\n')
+f.write('@ATTRIBUTE energy-mean REAL\n')
+f.write('@ATTRIBUTE energy-variance REAL\n')
+f.write('@ATTRIBUTE ZCR-mean REAL\n')
+f.write('@ATTRIBUTE ZCR-variance REAL\n')
+f.write('@ATTRIBUTE flatness-std REAL\n')
+f.write('@ATTRIBUTE flatness-hmean REAL\n')
+f.write('@ATTRIBUTE silences REAL\n')
+f.write('@ATTRIBUTE gaborfilter-mean REAL\n')
+f.write('@ATTRIBUTE gaborfilter-variance REAL\n')
+f.write('@ATTRIBUTE composer {bach, beethoven, chopin, haydn, liszt, mendelssohn, mozart, vivaldi}\n')
+f.write('\n')
+f.write('@DATA\n')
+
+
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/bach'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'bach'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('bach')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+# 2
+
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/beethoven/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/beethoven'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'beethoven'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('beethoven')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+# 3
+
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/chopin/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/chopin'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'chopin'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('chopin')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+# 4
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/haydn/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/haydn'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'haydn'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('haydn')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+'''
+# 5
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/liszt/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/liszt'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'liszt'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+			'''
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('liszt')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+
+# 6
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/mendelssohn/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/mendelssohn'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'mendelssohn'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('mendelssohn')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+# 7
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/mozart/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/mozart'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'mozart'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('mozart')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+# 8
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/vivaldi/*.wav")
+dirimg = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_10/pictures/vivaldi'
+dirname = str(dirimg) +'/*.png'
+piclist = glob.glob(dirname)
+counter = 0
+for audio_file in dirList:
+
+	# Selecting the expectrogram
+	for item in piclist:
+
+		if item.split('/')[-1].split('.')[0] == audio_file.split('/')[-1].split('.')[0]:
+
+			picname = str(dirimg)+'/'+str(audio_file.split('/')[-1].split('.')[0]) + '.png'
+			flat = []
+			rol = []
+			cen = []
+			flu = []
+			ene = []
+			zer = []
+			mfccs = []
+			stft = []
+			sil = []
+			mean_counter = []
+
+			# Loading audio
+			audio = MonoLoader(filename = audio_file)()
+
+			# Features extraction
+			for frame in FrameGenerator(audio, frameSize = 1024, hopSize = 512, startFromZero=True):
+			
+				bands = melbands(spectrum(frame)) 
+				stft.append(fft(frame))
+				flat.append(flatness(bands))
+				rol.append(rolloff(bands))
+				cen.append(centroid(bands)) 
+				flu.append(flux(bands))
+				ene.append(energy(bands)) 
+				zer.append(zero(frame))
+				mfcc_bands, mfcc_coeffs = mfcc(spectrum(w(frame)))
+				mfccs.append(mfcc_coeffs)
+				sil.append(silence(frame))
+			rate = collections.Counter()
+			rate.update(sil)
+			rate = rate.most_common(1)
+
+			composer = 'vivaldi'
+
+			# Gabor filter analysis
+	
+			if __name__ == '__main__':
+				import sys	 
+			print __doc__
+			try:
+				img_fn = sys.argv[1]
+			except:
+				img_fn = picname	 
+			img = cv2.imread(img_fn)
+			if img is None:
+				print 'Failed to load image file:', img_fn
+				sys.exit(1)	 
+			filters = build_filters() 
+			res1 = process(img, filters)
+			for i in range(len(res1)-1):	
+				for j in range(len(res1[i])-1):
+					mean_counter.append(np.mean(res1[i][j]))
+
+			f.write('%s' %audio_file.split('/')[-1].split('.')[0].split('vivaldi')[0])
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[0]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[1]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[2]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[3]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[4]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[5]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[6]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[7]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[8]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[9]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[10]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[11]))
+			f.write(',')
+			f.write('%r' %np.mean(mfccs[12]))
+			f.write(',')
+			f.write('%r' %np.mean(flat))
+			f.write(',')
+			f.write('%r' %np.var(flat))
+			f.write(',')
+			f.write('%r' %np.mean(rol))
+			f.write(',')
+			f.write('%r' %np.var(rol))
+			f.write(',')
+			f.write('%r' %np.mean(cen))
+			f.write(',')
+			f.write('%r' %np.var(cen))
+			f.write(',')
+			f.write('%r' %np.mean(flu))
+			f.write(',')
+			f.write('%r' %np.var(flu))
+			f.write(',')
+			f.write('%r' %np.mean(ene))
+			f.write(',')
+			f.write('%r' %np.var(ene))
+			f.write(',')
+			f.write('%r' %np.mean(zer))
+			f.write(',')
+			f.write('%r' %np.var(zer))
+			f.write(',')
+			f.write('%r' %np.std(flat))
+			f.write(',')
+			f.write('%r' %stats.hmean(flat))
+			f.write(',')
+			f.write('%r' %rate[0][1])
+			f.write(',')
+			f.write('%r' %np.var(mean_counter))
+			f.write(',')
+			f.write('%r' %np.std(mean_counter))
+			f.write(',')
+			f.write('%s' %composer)
+			f.write('\n')
+
+			counter += 1
+
+
+f.write('%\n')
+f.write('%\n')
+f.write('%\n')
+
+f.close()
+	
+
