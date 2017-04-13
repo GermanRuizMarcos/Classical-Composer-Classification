@@ -1,0 +1,18 @@
+import subprocess
+import glob
+
+c = 0
+noise = '/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/code_6/noise.wav'
+dirList = glob.glob("/home/usuario/Escritorio/SMC/2 term/Music Information Retrieval/Classical Composer Identification/datasets/bach/*.wav")
+
+for d in dirList:
+    c += 1
+
+    name2=str(c)+'noise+bach.wav'
+    m = '-m'
+    s = ['sox', m, d, noise, name2 ]
+    print c
+    subprocess.call(s)
+    
+
+
