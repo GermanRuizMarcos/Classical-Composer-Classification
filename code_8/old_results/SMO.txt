@@ -1,0 +1,952 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     composer dataset
+Instances:    751
+Attributes:   29
+              filename
+              MFCC-0
+              MFCC-1
+              MFCC-2
+              MFCC-3
+              MFCC-4
+              MFCC-5
+              MFCC-6
+              MFCC-7
+              MFCC-8
+              MFCC-9
+              MFCC-10
+              MFCC-11
+              MFCC-12
+              flatness-mean
+              flatness-variance
+              rolloff-mean
+              rolloff-variance
+              centroid-mean
+              centroid-variance
+              flux-mean
+              flux-variance
+              energy-mean
+              energy-variance
+              ZCR-mean
+              ZCR-variance
+              flatness-std
+              flatness-hmean
+              period
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: baroque, classical
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.1038 * (normalized) filename
+ +      -0.2803 * (normalized) MFCC-0
+ +      -2.0613 * (normalized) MFCC-1
+ +      -0.5207 * (normalized) MFCC-2
+ +      -0.3629 * (normalized) MFCC-3
+ +       0.3478 * (normalized) MFCC-4
+ +       0.6613 * (normalized) MFCC-5
+ +       0.4006 * (normalized) MFCC-6
+ +      -0.4863 * (normalized) MFCC-7
+ +       0.6995 * (normalized) MFCC-8
+ +      -0.0079 * (normalized) MFCC-9
+ +       0.3707 * (normalized) MFCC-10
+ +      -0.4435 * (normalized) MFCC-11
+ +      -0.0982 * (normalized) MFCC-12
+ +       0.243  * (normalized) flatness-mean
+ +       0.8571 * (normalized) flatness-variance
+ +      -2.2824 * (normalized) rolloff-mean
+ +       3.1402 * (normalized) rolloff-variance
+ +       0.4604 * (normalized) centroid-mean
+ +       0.2303 * (normalized) centroid-variance
+ +      -0.6812 * (normalized) flux-mean
+ +      -0.2015 * (normalized) flux-variance
+ +       0.6158 * (normalized) energy-mean
+ +       0.2722 * (normalized) energy-variance
+ +      -2.2424 * (normalized) ZCR-mean
+ +      -0.3478 * (normalized) ZCR-variance
+ +       1.9468 * (normalized) flatness-std
+ +       0.2071 * (normalized) flatness-hmean
+ +       0.784 
+
+Number of kernel evaluations: 17048 (73.467% cached)
+
+Classifier for classes: baroque, romantic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.4688 * (normalized) filename
+ +      -0.6607 * (normalized) MFCC-0
+ +      -0.5309 * (normalized) MFCC-1
+ +       0.4721 * (normalized) MFCC-2
+ +       0.5134 * (normalized) MFCC-3
+ +       0.5225 * (normalized) MFCC-4
+ +       0.5649 * (normalized) MFCC-5
+ +      -0.2758 * (normalized) MFCC-6
+ +      -0.4293 * (normalized) MFCC-7
+ +      -0.2335 * (normalized) MFCC-8
+ +       0.0327 * (normalized) MFCC-9
+ +      -0.5622 * (normalized) MFCC-10
+ +      -0.0168 * (normalized) MFCC-11
+ +      -0.2178 * (normalized) MFCC-12
+ +       2.4951 * (normalized) flatness-mean
+ +       1.6619 * (normalized) flatness-variance
+ +      -1.1676 * (normalized) rolloff-mean
+ +       1.1106 * (normalized) rolloff-variance
+ +      -0.133  * (normalized) centroid-mean
+ +       0.3026 * (normalized) centroid-variance
+ +      -0.5646 * (normalized) flux-mean
+ +      -0.4099 * (normalized) flux-variance
+ +      -0.5699 * (normalized) energy-mean
+ +      -0.2194 * (normalized) energy-variance
+ +      -2.689  * (normalized) ZCR-mean
+ +      -0.0567 * (normalized) ZCR-variance
+ +       1.813  * (normalized) flatness-std
+ +       1.9766 * (normalized) flatness-hmean
+ -       2.3321
+
+Number of kernel evaluations: 8410 (72.456% cached)
+
+Classifier for classes: classical, romantic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.0368 * (normalized) filename
+ +       0.1307 * (normalized) MFCC-0
+ +       0.7135 * (normalized) MFCC-1
+ +      -0.2443 * (normalized) MFCC-2
+ +       0.2887 * (normalized) MFCC-3
+ +      -0.6827 * (normalized) MFCC-4
+ +       0.4649 * (normalized) MFCC-5
+ +      -0.6837 * (normalized) MFCC-6
+ +       0.2689 * (normalized) MFCC-7
+ +      -0.2849 * (normalized) MFCC-8
+ +      -0.1845 * (normalized) MFCC-9
+ +      -0.13   * (normalized) MFCC-10
+ +      -0.0142 * (normalized) MFCC-11
+ +       0.0153 * (normalized) MFCC-12
+ +       3.5149 * (normalized) flatness-mean
+ +       1.8854 * (normalized) flatness-variance
+ +       1.442  * (normalized) rolloff-mean
+ +      -0.8862 * (normalized) rolloff-variance
+ +       0.3695 * (normalized) centroid-mean
+ +       0.3816 * (normalized) centroid-variance
+ +       2.1787 * (normalized) flux-mean
+ +       0.1887 * (normalized) flux-variance
+ +       0.028  * (normalized) energy-mean
+ +       0.3632 * (normalized) energy-variance
+ +      -1.756  * (normalized) ZCR-mean
+ +       0.4987 * (normalized) ZCR-variance
+ +       1.6187 * (normalized) flatness-std
+ +       1.9758 * (normalized) flatness-hmean
+ -       4.5414
+
+Number of kernel evaluations: 28524 (72.795% cached)
+
+
+
+Time taken to build model: 0.04 seconds
+
+=== Predictions on test data ===
+
+    inst#     actual  predicted error distribution (filename)
+        1  1:baroque 2:classical   +   0.333,*0.667,0 (96)
+        2  1:baroque  1:baroque       *0.667,0,0.333 (143)
+        3  1:baroque 2:classical   +   0.333,*0.667,0 (116)
+        4  1:baroque 2:classical   +   0.333,*0.667,0 (198)
+        5  1:baroque 2:classical   +   0,*0.667,0.333 (158)
+        6  1:baroque  1:baroque       *0.667,0.333,0 (69)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (209)
+        8  1:baroque 2:classical   +   0.333,*0.667,0 (188)
+        9  1:baroque  1:baroque       *0.667,0.333,0 (93)
+       10  1:baroque  1:baroque       *0.667,0.333,0 (9)
+       11  1:baroque 2:classical   +   0.333,*0.667,0 (53)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (148)
+       13  1:baroque 3:romantic   +   0,0.333,*0.667 (127)
+       14  1:baroque  1:baroque       *0.667,0.333,0 (80)
+       15  1:baroque 3:romantic   +   0,0.333,*0.667 (129)
+       16  1:baroque 2:classical   +   0.333,*0.667,0 (98)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (24)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (34)
+       19  1:baroque 2:classical   +   0.333,*0.667,0 (187)
+       20  1:baroque 3:romantic   +   0,0.333,*0.667 (204)
+       21  1:baroque  1:baroque       *0.667,0.333,0 (36)
+       22 2:classical 3:romantic   +   0,0.333,*0.667 (268)
+       23 2:classical 2:classical       0,*0.667,0.333 (120)
+       24 2:classical 2:classical       0,*0.667,0.333 (156)
+       25 2:classical 2:classical       0.333,*0.667,0 (78)
+       26 2:classical 2:classical       0.333,*0.667,0 (21)
+       27 2:classical 2:classical       0,*0.667,0.333 (143)
+       28 2:classical 2:classical       0,*0.667,0.333 (254)
+       29 2:classical 2:classical       0.333,*0.667,0 (198)
+       30 2:classical 3:romantic   +   0,0.333,*0.667 (204)
+       31 2:classical 2:classical       0.333,*0.667,0 (271)
+       32 2:classical 2:classical       0,*0.667,0.333 (140)
+       33 2:classical 2:classical       0.333,*0.667,0 (57)
+       34 2:classical 3:romantic   +   0,0.333,*0.667 (44)
+       35 2:classical 3:romantic   +   0,0.333,*0.667 (205)
+       36 2:classical 2:classical       0.333,*0.667,0 (279)
+       37 2:classical 2:classical       0,*0.667,0.333 (238)
+       38 2:classical 2:classical       0,*0.667,0.333 (154)
+       39 2:classical 2:classical       0,*0.667,0.333 (246)
+       40 2:classical 2:classical       0.333,*0.667,0 (176)
+       41 2:classical 2:classical       0,*0.667,0.333 (181)
+       42 2:classical 2:classical       0,*0.667,0.333 (286)
+       43 2:classical  1:baroque   +   *0.667,0.333,0 (121)
+       44 2:classical 2:classical       0,*0.667,0.333 (192)
+       45 2:classical 2:classical       0.333,*0.667,0 (26)
+       46 2:classical 2:classical       0.333,*0.667,0 (277)
+       47 2:classical 2:classical       0,*0.667,0.333 (8)
+       48 2:classical 2:classical       0.333,*0.667,0 (287)
+       49 2:classical 2:classical       0,*0.667,0.333 (307)
+       50 2:classical 2:classical       0.333,*0.667,0 (197)
+       51 2:classical 2:classical       0.333,*0.667,0 (150)
+       52 2:classical 2:classical       0.333,*0.667,0 (91)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (144)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (94)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (36)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (29)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (90)
+       58 3:romantic 2:classical   +   0.333,*0.667,0 (169)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (37)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (230)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (151)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (123)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (78)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (77)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (49)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (43)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (170)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (161)
+       69 3:romantic 2:classical   +   0,*0.667,0.333 (218)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (17)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (166)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (3)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (58)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (176)
+       75 3:romantic 3:romantic       0,0.333,*0.667 (227)
+       76 3:romantic 3:romantic       0,0.333,*0.667 (188)
+        1  1:baroque 2:classical   +   0.333,*0.667,0 (141)
+        2  1:baroque  1:baroque       *0.667,0.333,0 (162)
+        3  1:baroque  1:baroque       *0.667,0.333,0 (81)
+        4  1:baroque 2:classical   +   0.333,*0.667,0 (186)
+        5  1:baroque 2:classical   +   0,*0.667,0.333 (119)
+        6  1:baroque  1:baroque       *0.667,0.333,0 (185)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (49)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (103)
+        9  1:baroque  1:baroque       *0.667,0.333,0 (115)
+       10  1:baroque  1:baroque       *0.667,0.333,0 (84)
+       11  1:baroque 2:classical   +   0.333,*0.667,0 (18)
+       12  1:baroque  1:baroque       *0.333,0.333,0.333 (83)
+       13  1:baroque  1:baroque       *0.667,0.333,0 (140)
+       14  1:baroque 3:romantic   +   0.333,0,*0.667 (32)
+       15  1:baroque  1:baroque       *0.667,0.333,0 (132)
+       16  1:baroque 3:romantic   +   0,0.333,*0.667 (59)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (138)
+       18  1:baroque 3:romantic   +   0,0.333,*0.667 (177)
+       19  1:baroque 3:romantic   +   0,0.333,*0.667 (124)
+       20  1:baroque  1:baroque       *0.667,0.333,0 (70)
+       21  1:baroque  1:baroque       *0.667,0.333,0 (145)
+       22 2:classical  1:baroque   +   *0.667,0.333,0 (104)
+       23 2:classical 3:romantic   +   0,0.333,*0.667 (159)
+       24 2:classical  1:baroque   +   *0.667,0.333,0 (101)
+       25 2:classical 2:classical       0.333,*0.667,0 (172)
+       26 2:classical 2:classical       0,*0.667,0.333 (155)
+       27 2:classical 2:classical       0.333,*0.667,0 (24)
+       28 2:classical 2:classical       0,*0.667,0.333 (163)
+       29 2:classical 2:classical       0,*0.667,0.333 (117)
+       30 2:classical 2:classical       0,*0.667,0.333 (294)
+       31 2:classical 3:romantic   +   0,0.333,*0.667 (230)
+       32 2:classical 3:romantic   +   0,0.333,*0.667 (7)
+       33 2:classical  1:baroque   +   *0.667,0.333,0 (4)
+       34 2:classical 2:classical       0.333,*0.667,0 (148)
+       35 2:classical 2:classical       0.333,*0.667,0 (165)
+       36 2:classical 2:classical       0.333,*0.667,0 (136)
+       37 2:classical 2:classical       0.333,*0.667,0 (131)
+       38 2:classical 2:classical       0.333,*0.667,0 (201)
+       39 2:classical 2:classical       0.333,*0.667,0 (255)
+       40 2:classical 2:classical       0,*0.667,0.333 (153)
+       41 2:classical 2:classical       0.333,*0.667,0 (40)
+       42 2:classical 2:classical       0.333,*0.667,0 (84)
+       43 2:classical 2:classical       0.333,*0.667,0 (276)
+       44 2:classical  1:baroque   +   *0.667,0.333,0 (83)
+       45 2:classical 2:classical       0,*0.667,0.333 (256)
+       46 2:classical 2:classical       0.333,*0.667,0 (47)
+       47 2:classical 2:classical       0.333,*0.667,0 (33)
+       48 2:classical 2:classical       0,*0.667,0.333 (221)
+       49 2:classical 2:classical       0,*0.667,0.333 (285)
+       50 2:classical 2:classical       0,*0.667,0.333 (60)
+       51 2:classical 2:classical       0,*0.667,0.333 (240)
+       52 2:classical 2:classical       0.333,*0.667,0 (207)
+       53 3:romantic 2:classical   +   0.333,*0.667,0 (187)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (42)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (226)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (62)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (138)
+       58 3:romantic  1:baroque   +   *0.667,0,0.333 (46)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (120)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (88)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (175)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (64)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (212)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (158)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (165)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (211)
+       67 3:romantic  1:baroque   +   *0.667,0,0.333 (55)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (224)
+       69 3:romantic 2:classical   +   0,*0.667,0.333 (204)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (229)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (95)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (167)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (35)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (155)
+       75 3:romantic 2:classical   +   0,*0.667,0.333 (193)
+        1  1:baroque  1:baroque       *0.667,0.333,0 (207)
+        2  1:baroque  1:baroque       *0.667,0.333,0 (91)
+        3  1:baroque  1:baroque       *0.667,0.333,0 (149)
+        4  1:baroque  1:baroque       *0.667,0.333,0 (17)
+        5  1:baroque  1:baroque       *0.667,0.333,0 (27)
+        6  1:baroque 2:classical   +   0.333,*0.667,0 (134)
+        7  1:baroque 2:classical   +   0,*0.667,0.333 (48)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (85)
+        9  1:baroque 3:romantic   +   0,0.333,*0.667 (61)
+       10  1:baroque 2:classical   +   0.333,*0.667,0 (146)
+       11  1:baroque  1:baroque       *0.667,0.333,0 (46)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (74)
+       13  1:baroque 2:classical   +   0.333,*0.667,0 (144)
+       14  1:baroque 2:classical   +   0,*0.667,0.333 (163)
+       15  1:baroque  1:baroque       *0.667,0.333,0 (152)
+       16  1:baroque  1:baroque       *0.667,0.333,0 (164)
+       17  1:baroque 2:classical   +   0.333,*0.667,0 (195)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (101)
+       19  1:baroque 2:classical   +   0.333,*0.667,0 (22)
+       20  1:baroque 2:classical   +   0.333,*0.667,0 (174)
+       21  1:baroque  1:baroque       *0.667,0.333,0 (110)
+       22 2:classical 3:romantic   +   0,0.333,*0.667 (90)
+       23 2:classical 3:romantic   +   0,0.333,*0.667 (98)
+       24 2:classical  1:baroque   +   *0.667,0.333,0 (68)
+       25 2:classical 2:classical       0.333,*0.667,0 (127)
+       26 2:classical  1:baroque   +   *0.667,0.333,0 (41)
+       27 2:classical 3:romantic   +   0,0.333,*0.667 (45)
+       28 2:classical 2:classical       0.333,*0.667,0 (119)
+       29 2:classical 2:classical       0,*0.667,0.333 (215)
+       30 2:classical 3:romantic   +   0,0.333,*0.667 (70)
+       31 2:classical 2:classical       0,*0.667,0.333 (267)
+       32 2:classical 2:classical       0.333,*0.667,0 (50)
+       33 2:classical 3:romantic   +   0,0.333,*0.667 (245)
+       34 2:classical  1:baroque   +   *0.667,0.333,0 (65)
+       35 2:classical 2:classical       0.333,*0.667,0 (64)
+       36 2:classical 3:romantic   +   0.333,0,*0.667 (14)
+       37 2:classical 2:classical       0,*0.667,0.333 (217)
+       38 2:classical 3:romantic   +   0,0.333,*0.667 (66)
+       39 2:classical  1:baroque   +   *0.667,0.333,0 (115)
+       40 2:classical 2:classical       0.333,*0.667,0 (241)
+       41 2:classical 2:classical       0.333,*0.667,0 (211)
+       42 2:classical 3:romantic   +   0,0.333,*0.667 (42)
+       43 2:classical 2:classical       0,*0.667,0.333 (269)
+       44 2:classical  1:baroque   +   *0.667,0.333,0 (114)
+       45 2:classical 2:classical       0.333,*0.667,0 (232)
+       46 2:classical 2:classical       0.333,*0.667,0 (177)
+       47 2:classical 2:classical       0,*0.667,0.333 (281)
+       48 2:classical  1:baroque   +   *0.667,0.333,0 (30)
+       49 2:classical 2:classical       0,*0.667,0.333 (284)
+       50 2:classical 2:classical       0,*0.667,0.333 (274)
+       51 2:classical 2:classical       0.333,*0.667,0 (199)
+       52 2:classical 3:romantic   +   0,0.333,*0.667 (53)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (66)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (118)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (27)
+       56 3:romantic 3:romantic       0.333,0,*0.667 (14)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (12)
+       58 3:romantic 3:romantic       0,0.333,*0.667 (82)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (33)
+       60 3:romantic 2:classical   +   0.333,*0.667,0 (199)
+       61 3:romantic 2:classical   +   0.333,*0.667,0 (129)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (203)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (5)
+       64 3:romantic 3:romantic       0.333,0,*0.667 (4)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (121)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (97)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (21)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (130)
+       69 3:romantic 3:romantic       0,0.333,*0.667 (13)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (54)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (220)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (208)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (213)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (75)
+       75 3:romantic 3:romantic       0,0.333,*0.667 (232)
+        1  1:baroque  1:baroque       *0.667,0.333,0 (52)
+        2  1:baroque 3:romantic   +   0,0.333,*0.667 (111)
+        3  1:baroque  1:baroque       *0.667,0.333,0 (142)
+        4  1:baroque 2:classical   +   0.333,*0.667,0 (197)
+        5  1:baroque 2:classical   +   0.333,*0.667,0 (73)
+        6  1:baroque  1:baroque       *0.667,0.333,0 (11)
+        7  1:baroque 3:romantic   +   0,0.333,*0.667 (13)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (47)
+        9  1:baroque  1:baroque       *0.667,0.333,0 (172)
+       10  1:baroque 2:classical   +   0.333,*0.667,0 (121)
+       11  1:baroque 2:classical   +   0.333,*0.667,0 (181)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (63)
+       13  1:baroque 2:classical   +   0.333,*0.667,0 (68)
+       14  1:baroque  1:baroque       *0.667,0.333,0 (23)
+       15  1:baroque  1:baroque       *0.667,0.333,0 (106)
+       16  1:baroque  1:baroque       *0.667,0.333,0 (31)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (57)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (45)
+       19  1:baroque 3:romantic   +   0,0.333,*0.667 (139)
+       20  1:baroque  1:baroque       *0.667,0,0.333 (95)
+       21  1:baroque 3:romantic   +   0,0.333,*0.667 (1)
+       22 2:classical  1:baroque   +   *0.667,0.333,0 (17)
+       23 2:classical 2:classical       0,*0.667,0.333 (251)
+       24 2:classical 2:classical       0.333,*0.667,0 (107)
+       25 2:classical 2:classical       0.333,*0.667,0 (123)
+       26 2:classical 2:classical       0,*0.667,0.333 (97)
+       27 2:classical 2:classical       0.333,*0.667,0 (164)
+       28 2:classical 3:romantic   +   0,0.333,*0.667 (124)
+       29 2:classical 2:classical       0.333,*0.667,0 (106)
+       30 2:classical 2:classical       0,*0.667,0.333 (283)
+       31 2:classical 2:classical       0,*0.667,0.333 (132)
+       32 2:classical 2:classical       0.333,*0.667,0 (270)
+       33 2:classical  1:baroque   +   *0.667,0.333,0 (126)
+       34 2:classical 2:classical       0.333,*0.667,0 (72)
+       35 2:classical 3:romantic   +   0,0.333,*0.667 (188)
+       36 2:classical 2:classical       0.333,*0.667,0 (236)
+       37 2:classical 2:classical       0.333,*0.667,0 (252)
+       38 2:classical 2:classical       0.333,*0.667,0 (144)
+       39 2:classical  1:baroque   +   *0.667,0.333,0 (38)
+       40 2:classical  1:baroque   +   *0.667,0.333,0 (32)
+       41 2:classical 2:classical       0.333,*0.667,0 (174)
+       42 2:classical 3:romantic   +   0,0.333,*0.667 (34)
+       43 2:classical 2:classical       0,*0.667,0.333 (253)
+       44 2:classical  1:baroque   +   *0.667,0.333,0 (59)
+       45 2:classical 2:classical       0.333,*0.667,0 (203)
+       46 2:classical  1:baroque   +   *0.667,0.333,0 (248)
+       47 2:classical 2:classical       0.333,*0.667,0 (52)
+       48 2:classical 2:classical       0,*0.667,0.333 (288)
+       49 2:classical 3:romantic   +   0,0.333,*0.667 (193)
+       50 2:classical 2:classical       0.333,*0.667,0 (258)
+       51 2:classical 2:classical       0,*0.667,0.333 (27)
+       52 2:classical 2:classical       0,*0.667,0.333 (293)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (7)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (172)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (231)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (83)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (177)
+       58 3:romantic 3:romantic       0,0.333,*0.667 (91)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (215)
+       60 3:romantic 2:classical   +   0,*0.667,0.333 (92)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (80)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (52)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (124)
+       64 3:romantic 2:classical   +   0,*0.667,0.333 (132)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (136)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (131)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (149)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (51)
+       69 3:romantic 3:romantic       0,0.333,*0.667 (101)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (159)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (186)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (156)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (71)
+       74 3:romantic 2:classical   +   0,*0.667,0.333 (1)
+       75 3:romantic 2:classical   +   0,*0.667,0.333 (128)
+        1  1:baroque  1:baroque       *0.667,0.333,0 (35)
+        2  1:baroque 2:classical   +   0.333,*0.667,0 (128)
+        3  1:baroque 2:classical   +   0.333,*0.667,0 (147)
+        4  1:baroque  1:baroque       *0.667,0.333,0 (39)
+        5  1:baroque 3:romantic   +   0,0.333,*0.667 (176)
+        6  1:baroque 2:classical   +   0.333,*0.667,0 (118)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (29)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (38)
+        9  1:baroque 2:classical   +   0.333,*0.667,0 (153)
+       10  1:baroque  1:baroque       *0.667,0.333,0 (10)
+       11  1:baroque 2:classical   +   0.333,*0.667,0 (189)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (26)
+       13  1:baroque 2:classical   +   0.333,*0.667,0 (4)
+       14  1:baroque  1:baroque       *0.667,0.333,0 (170)
+       15  1:baroque  1:baroque       *0.667,0.333,0 (120)
+       16  1:baroque  1:baroque       *0.667,0.333,0 (157)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (43)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (167)
+       19  1:baroque 2:classical   +   0.333,*0.667,0 (175)
+       20  1:baroque  1:baroque       *0.667,0.333,0 (125)
+       21  1:baroque  1:baroque       *0.667,0.333,0 (21)
+       22 2:classical 3:romantic   +   0,0.333,*0.667 (49)
+       23 2:classical 2:classical       0.333,*0.667,0 (209)
+       24 2:classical 2:classical       0.333,*0.667,0 (220)
+       25 2:classical 2:classical       0.333,*0.667,0 (226)
+       26 2:classical 2:classical       0.333,*0.667,0 (74)
+       27 2:classical 2:classical       0,*0.667,0.333 (264)
+       28 2:classical  1:baroque   +   *0.667,0.333,0 (55)
+       29 2:classical 3:romantic   +   0,0.333,*0.667 (109)
+       30 2:classical 2:classical       0,*0.667,0.333 (152)
+       31 2:classical  1:baroque   +   *0.667,0.333,0 (9)
+       32 2:classical 2:classical       0.333,*0.667,0 (122)
+       33 2:classical 2:classical       0,*0.667,0.333 (189)
+       34 2:classical 2:classical       0.333,*0.667,0 (73)
+       35 2:classical 2:classical       0.333,*0.667,0 (202)
+       36 2:classical 2:classical       0.333,*0.667,0 (235)
+       37 2:classical 2:classical       0.333,*0.667,0 (303)
+       38 2:classical 2:classical       0,*0.667,0.333 (216)
+       39 2:classical 2:classical       0.333,*0.667,0 (111)
+       40 2:classical 2:classical       0.333,*0.667,0 (222)
+       41 2:classical 2:classical       0,*0.667,0.333 (71)
+       42 2:classical 2:classical       0.333,*0.667,0 (213)
+       43 2:classical 2:classical       0.333,*0.667,0 (275)
+       44 2:classical 2:classical       0.333,*0.667,0 (300)
+       45 2:classical 3:romantic   +   0,0.333,*0.667 (308)
+       46 2:classical 2:classical       0.333,*0.667,0 (227)
+       47 2:classical 3:romantic   +   0,0.333,*0.667 (2)
+       48 2:classical  1:baroque   +   *0.667,0.333,0 (282)
+       49 2:classical 2:classical       0.333,*0.667,0 (31)
+       50 2:classical 3:romantic   +   0,0.333,*0.667 (82)
+       51 2:classical 2:classical       0,*0.667,0.333 (278)
+       52 2:classical 2:classical       0,*0.667,0.333 (87)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (65)
+       54 3:romantic 2:classical   +   0,*0.667,0.333 (114)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (106)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (126)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (20)
+       58 3:romantic 2:classical   +   0.333,*0.667,0 (174)
+       59 3:romantic 2:classical   +   0,*0.667,0.333 (31)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (216)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (164)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (69)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (28)
+       64 3:romantic  1:baroque   +   *0.333,0.333,0.333 (103)
+       65 3:romantic 2:classical   +   0.333,*0.667,0 (147)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (179)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (9)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (79)
+       69 3:romantic 3:romantic       0,0.333,*0.667 (194)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (171)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (184)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (59)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (117)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (24)
+       75 3:romantic 3:romantic       0,0.333,*0.667 (143)
+        1  1:baroque  1:baroque       *0.667,0.333,0 (6)
+        2  1:baroque  1:baroque       *0.667,0.333,0 (90)
+        3  1:baroque  1:baroque       *0.667,0.333,0 (136)
+        4  1:baroque 2:classical   +   0.333,*0.667,0 (154)
+        5  1:baroque  1:baroque       *0.667,0.333,0 (206)
+        6  1:baroque 2:classical   +   0.333,*0.667,0 (161)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (89)
+        8  1:baroque 3:romantic   +   0,0.333,*0.667 (58)
+        9  1:baroque 2:classical   +   0.333,*0.667,0 (200)
+       10  1:baroque  1:baroque       *0.667,0.333,0 (75)
+       11  1:baroque  1:baroque       *0.667,0.333,0 (109)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (87)
+       13  1:baroque 3:romantic   +   0.333,0,*0.667 (16)
+       14  1:baroque 2:classical   +   0.333,*0.667,0 (159)
+       15  1:baroque  1:baroque       *0.667,0.333,0 (196)
+       16  1:baroque 3:romantic   +   0,0.333,*0.667 (130)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (40)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (199)
+       19  1:baroque  1:baroque       *0.667,0.333,0 (100)
+       20  1:baroque  1:baroque       *0.667,0.333,0 (102)
+       21  1:baroque  1:baroque       *0.667,0.333,0 (37)
+       22 2:classical 2:classical       0.333,*0.667,0 (184)
+       23 2:classical 3:romantic   +   0,0.333,*0.667 (237)
+       24 2:classical 2:classical       0.333,*0.667,0 (11)
+       25 2:classical 2:classical       0.333,*0.667,0 (96)
+       26 2:classical 2:classical       0.333,*0.667,0 (168)
+       27 2:classical 2:classical       0.333,*0.667,0 (214)
+       28 2:classical 2:classical       0.333,*0.667,0 (129)
+       29 2:classical  1:baroque   +   *0.667,0,0.333 (13)
+       30 2:classical  1:baroque   +   *0.667,0.333,0 (37)
+       31 2:classical 2:classical       0,*0.667,0.333 (297)
+       32 2:classical 2:classical       0.333,*0.667,0 (208)
+       33 2:classical 2:classical       0,*0.667,0.333 (187)
+       34 2:classical 2:classical       0.333,*0.667,0 (196)
+       35 2:classical  1:baroque   +   *0.667,0.333,0 (80)
+       36 2:classical 3:romantic   +   0,0.333,*0.667 (265)
+       37 2:classical 2:classical       0.333,*0.667,0 (15)
+       38 2:classical 2:classical       0,*0.667,0.333 (195)
+       39 2:classical  1:baroque   +   *0.333,0.333,0.333 (244)
+       40 2:classical 2:classical       0.333,*0.667,0 (233)
+       41 2:classical 2:classical       0.333,*0.667,0 (273)
+       42 2:classical 2:classical       0.333,*0.667,0 (302)
+       43 2:classical 3:romantic   +   0,0.333,*0.667 (137)
+       44 2:classical 2:classical       0.333,*0.667,0 (103)
+       45 2:classical 2:classical       0.333,*0.667,0 (272)
+       46 2:classical 3:romantic   +   0,0.333,*0.667 (89)
+       47 2:classical 2:classical       0,*0.667,0.333 (298)
+       48 2:classical  1:baroque   +   *0.667,0.333,0 (12)
+       49 2:classical 2:classical       0.333,*0.667,0 (304)
+       50 2:classical 2:classical       0.333,*0.667,0 (296)
+       51 2:classical 2:classical       0.333,*0.667,0 (180)
+       52 2:classical 2:classical       0.333,*0.667,0 (183)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (139)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (56)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (206)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (133)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (15)
+       58 3:romantic 3:romantic       0,0.333,*0.667 (34)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (61)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (178)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (113)
+       62 3:romantic  1:baroque   +   *0.667,0,0.333 (53)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (104)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (150)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (50)
+       66 3:romantic 2:classical   +   0.333,*0.667,0 (223)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (197)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (6)
+       69 3:romantic 3:romantic       0,0.333,*0.667 (168)
+       70 3:romantic 2:classical   +   0.333,*0.667,0 (195)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (60)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (148)
+       73 3:romantic 2:classical   +   0,*0.667,0.333 (202)
+       74 3:romantic  1:baroque   +   *0.667,0,0.333 (8)
+       75 3:romantic  1:baroque   +   *0.667,0.333,0 (25)
+
+
+
+
+SEGUIR AQUÍ!!
+
+
+        1  1:baroque  1:baroque       *0.667,0.333,0 (156)
+        2  1:baroque 2:classical   +   0.333,*0.667,0 (155)
+        3  1:baroque  1:baroque       *0.667,0.333,0 (208)
+        4  1:baroque 2:classical   +   0,*0.667,0.333 (105)
+        5  1:baroque  1:baroque       *0.667,0,0.333 (169)
+        6  1:baroque 2:classical   +   0.333,*0.667,0 (192)
+        7  1:baroque 2:classical   +   0,*0.667,0.333 (51)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (55)
+        9  1:baroque 2:classical   +   0.333,*0.667,0 (150)
+       10  1:baroque  1:baroque       *0.667,0.333,0 (15)
+       11  1:baroque  1:baroque       *0.667,0.333,0 (50)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (65)
+       13  1:baroque  1:baroque       *0.667,0.333,0 (123)
+       14  1:baroque  1:baroque       *0.667,0.333,0 (108)
+       15  1:baroque 2:classical   +   0.333,*0.667,0 (168)
+       16  1:baroque  1:baroque       *0.667,0.333,0 (104)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (79)
+       18  1:baroque  1:baroque       *0.667,0,0.333 (67)
+       19  1:baroque  1:baroque       *0.667,0.333,0 (166)
+       20  1:baroque 2:classical   +   0.333,*0.667,0 (193)
+       21  1:baroque 2:classical   +   0.333,*0.667,0 (77)
+       22 2:classical 2:classical       0.333,*0.667,0 (259)
+       23 2:classical 2:classical       0.333,*0.667,0 (218)
+       24 2:classical 2:classical       0.333,*0.667,0 (289)
+       25 2:classical 2:classical       0,*0.667,0.333 (305)
+       26 2:classical 3:romantic   +   0,0.333,*0.667 (128)
+       27 2:classical 2:classical       0.333,*0.667,0 (158)
+       28 2:classical 2:classical       0.333,*0.667,0 (151)
+       29 2:classical 2:classical       0,*0.667,0.333 (138)
+       30 2:classical  1:baroque   +   *0.667,0.333,0 (19)
+       31 2:classical 2:classical       0.333,*0.667,0 (185)
+       32 2:classical  1:baroque   +   *0.667,0.333,0 (182)
+       33 2:classical 2:classical       0.333,*0.667,0 (175)
+       34 2:classical 2:classical       0.333,*0.667,0 (243)
+       35 2:classical  1:baroque   +   *0.667,0.333,0 (88)
+       36 2:classical 2:classical       0.333,*0.667,0 (141)
+       37 2:classical 2:classical       0.333,*0.667,0 (186)
+       38 2:classical 2:classical       0.333,*0.667,0 (125)
+       39 2:classical 2:classical       0,*0.667,0.333 (166)
+       40 2:classical 2:classical       0.333,*0.667,0 (261)
+       41 2:classical 2:classical       0.333,*0.667,0 (135)
+       42 2:classical 2:classical       0.333,*0.667,0 (223)
+       43 2:classical 2:classical       0.333,*0.667,0 (171)
+       44 2:classical 2:classical       0.333,*0.667,0 (249)
+       45 2:classical  1:baroque   +   *0.667,0.333,0 (173)
+       46 2:classical  1:baroque   +   *0.667,0.333,0 (58)
+       47 2:classical 2:classical       0.333,*0.667,0 (224)
+       48 2:classical 2:classical       0.333,*0.667,0 (191)
+       49 2:classical  1:baroque   +   *0.667,0.333,0 (35)
+       50 2:classical 2:classical       0,*0.667,0.333 (210)
+       51 2:classical 2:classical       0.333,*0.667,0 (85)
+       52 2:classical 2:classical       0.333,*0.667,0 (86)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (85)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (81)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (107)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (99)
+       57 3:romantic 2:classical   +   0.333,*0.667,0 (180)
+       58 3:romantic 2:classical   +   0.333,*0.667,0 (228)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (74)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (221)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (127)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (16)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (48)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (116)
+       65 3:romantic 2:classical   +   0,*0.667,0.333 (19)
+       66 3:romantic 2:classical   +   0,*0.667,0.333 (152)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (142)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (162)
+       69 3:romantic 3:romantic       0,0.333,*0.667 (26)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (125)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (181)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (18)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (44)
+       74 3:romantic 2:classical   +   0.333,*0.667,0 (76)
+       75 3:romantic 2:classical   +   0.333,*0.667,0 (153)
+        1  1:baroque  1:baroque       *0.667,0.333,0 (3)
+        2  1:baroque 2:classical   +   0.333,*0.667,0 (191)
+        3  1:baroque 2:classical   +   0,*0.667,0.333 (173)
+        4  1:baroque  1:baroque       *0.667,0.333,0 (117)
+        5  1:baroque 2:classical   +   0.333,*0.667,0 (56)
+        6  1:baroque  1:baroque       *0.667,0.333,0 (2)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (151)
+        8  1:baroque 2:classical   +   0.333,*0.667,0 (137)
+        9  1:baroque 2:classical   +   0.333,*0.667,0 (25)
+       10  1:baroque  1:baroque       *0.333,0.333,0.333 (88)
+       11  1:baroque  1:baroque       *0.667,0.333,0 (60)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (64)
+       13  1:baroque 2:classical   +   0.333,*0.667,0 (190)
+       14  1:baroque 2:classical   +   0.333,*0.667,0 (76)
+       15  1:baroque 2:classical   +   0.333,*0.667,0 (180)
+       16  1:baroque  1:baroque       *0.667,0.333,0 (82)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (41)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (5)
+       19  1:baroque 2:classical   +   0.333,*0.667,0 (92)
+       20  1:baroque  1:baroque       *0.667,0.333,0 (184)
+       21  1:baroque  1:baroque       *0.667,0.333,0 (14)
+       22 2:classical 2:classical       0,*0.667,0.333 (10)
+       23 2:classical 2:classical       0.333,*0.667,0 (260)
+       24 2:classical 2:classical       0,*0.667,0.333 (301)
+       25 2:classical  1:baroque   +   *0.667,0.333,0 (110)
+       26 2:classical 2:classical       0,*0.667,0.333 (266)
+       27 2:classical 3:romantic   +   0,0.333,*0.667 (290)
+       28 2:classical 2:classical       0.333,*0.667,0 (36)
+       29 2:classical 2:classical       0.333,*0.667,0 (116)
+       30 2:classical  1:baroque   +   *0.667,0.333,0 (18)
+       31 2:classical 2:classical       0.333,*0.667,0 (130)
+       32 2:classical  1:baroque   +   *0.667,0.333,0 (56)
+       33 2:classical 2:classical       0,*0.667,0.333 (299)
+       34 2:classical 2:classical       0.333,*0.667,0 (147)
+       35 2:classical 2:classical       0,*0.667,0.333 (3)
+       36 2:classical 2:classical       0.333,*0.667,0 (263)
+       37 2:classical 2:classical       0.333,*0.667,0 (190)
+       38 2:classical  1:baroque   +   *0.667,0.333,0 (28)
+       39 2:classical 2:classical       0,*0.667,0.333 (43)
+       40 2:classical 3:romantic   +   0,0.333,*0.667 (162)
+       41 2:classical 2:classical       0.333,*0.667,0 (228)
+       42 2:classical 3:romantic   +   0,0.333,*0.667 (139)
+       43 2:classical 3:romantic   +   0,0.333,*0.667 (54)
+       44 2:classical 2:classical       0,*0.667,0.333 (112)
+       45 2:classical 2:classical       0,*0.667,0.333 (46)
+       46 2:classical 2:classical       0.333,*0.667,0 (292)
+       47 2:classical 2:classical       0.333,*0.667,0 (92)
+       48 2:classical 2:classical       0.333,*0.667,0 (29)
+       49 2:classical 2:classical       0.333,*0.667,0 (219)
+       50 2:classical 2:classical       0,*0.667,0.333 (225)
+       51 2:classical 2:classical       0,*0.667,0.333 (105)
+       52 2:classical 3:romantic   +   0,0.333,*0.667 (20)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (222)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (225)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (146)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (198)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (214)
+       58 3:romantic 3:romantic       0,0.333,*0.667 (207)
+       59 3:romantic 2:classical   +   0.333,*0.667,0 (154)
+       60 3:romantic 2:classical   +   0.333,*0.667,0 (185)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (189)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (38)
+       63 3:romantic 2:classical   +   0,*0.667,0.333 (73)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (11)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (47)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (112)
+       67 3:romantic  1:baroque   +   *0.667,0,0.333 (119)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (70)
+       69 3:romantic 3:romantic       0,0.333,*0.667 (209)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (96)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (137)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (217)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (140)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (39)
+       75 3:romantic 3:romantic       0,0.333,*0.667 (72)
+        1  1:baroque 3:romantic   +   0,0.333,*0.667 (182)
+        2  1:baroque  1:baroque       *0.667,0.333,0 (66)
+        3  1:baroque  1:baroque       *0.667,0.333,0 (20)
+        4  1:baroque 2:classical   +   0.333,*0.667,0 (165)
+        5  1:baroque  1:baroque       *0.667,0,0.333 (78)
+        6  1:baroque 2:classical   +   0.333,*0.667,0 (179)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (171)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (135)
+        9  1:baroque 2:classical   +   0.333,*0.667,0 (112)
+       10  1:baroque 2:classical   +   0.333,*0.667,0 (133)
+       11  1:baroque  1:baroque       *0.667,0.333,0 (72)
+       12  1:baroque 3:romantic   +   0,0.333,*0.667 (203)
+       13  1:baroque 2:classical   +   0,*0.667,0.333 (194)
+       14  1:baroque  1:baroque       *0.667,0.333,0 (160)
+       15  1:baroque  1:baroque       *0.667,0.333,0 (107)
+       16  1:baroque  1:baroque       *0.667,0,0.333 (71)
+       17  1:baroque 3:romantic   +   0,0.333,*0.667 (86)
+       18  1:baroque  1:baroque       *0.667,0,0.333 (28)
+       19  1:baroque 3:romantic   +   0,0.333,*0.667 (126)
+       20  1:baroque  1:baroque       *0.667,0.333,0 (201)
+       21  1:baroque 2:classical   +   0.333,*0.667,0 (54)
+       22 2:classical 2:classical       0.333,*0.667,0 (81)
+       23 2:classical 2:classical       0,*0.667,0.333 (99)
+       24 2:classical 2:classical       0.333,*0.667,0 (169)
+       25 2:classical 3:romantic   +   0,0.333,*0.667 (1)
+       26 2:classical 2:classical       0,*0.667,0.333 (113)
+       27 2:classical 2:classical       0.333,*0.667,0 (247)
+       28 2:classical  1:baroque   +   *0.667,0.333,0 (67)
+       29 2:classical 2:classical       0.333,*0.667,0 (280)
+       30 2:classical 3:romantic   +   0.333,0,*0.667 (23)
+       31 2:classical 2:classical       0,*0.667,0.333 (239)
+       32 2:classical 2:classical       0.333,*0.667,0 (212)
+       33 2:classical 2:classical       0,*0.667,0.333 (77)
+       34 2:classical 2:classical       0,*0.667,0.333 (75)
+       35 2:classical 2:classical       0.333,*0.667,0 (161)
+       36 2:classical 2:classical       0,*0.667,0.333 (51)
+       37 2:classical 2:classical       0,*0.667,0.333 (262)
+       38 2:classical  1:baroque   +   *0.667,0.333,0 (25)
+       39 2:classical 2:classical       0,*0.667,0.333 (134)
+       40 2:classical 2:classical       0.333,*0.667,0 (160)
+       41 2:classical 2:classical       0.333,*0.667,0 (242)
+       42 2:classical 2:classical       0.333,*0.667,0 (48)
+       43 2:classical 2:classical       0,*0.667,0.333 (291)
+       44 2:classical 2:classical       0.333,*0.667,0 (229)
+       45 2:classical 2:classical       0.333,*0.667,0 (146)
+       46 2:classical 2:classical       0.333,*0.667,0 (76)
+       47 2:classical  1:baroque   +   *0.667,0.333,0 (6)
+       48 2:classical 2:classical       0.333,*0.667,0 (234)
+       49 2:classical 2:classical       0.333,*0.667,0 (108)
+       50 2:classical 3:romantic   +   0,0.333,*0.667 (63)
+       51 2:classical  1:baroque   +   *0.667,0.333,0 (5)
+       52 3:romantic 3:romantic       0,0.333,*0.667 (173)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (196)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (86)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (190)
+       56 3:romantic 3:romantic       0,0.333,*0.667 (134)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (93)
+       58 3:romantic 3:romantic       0,0.333,*0.667 (210)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (22)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (63)
+       61 3:romantic  1:baroque   +   *0.667,0,0.333 (40)
+       62 3:romantic 3:romantic       0,0.333,*0.667 (98)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (201)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (205)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (191)
+       66 3:romantic 2:classical   +   0,*0.667,0.333 (100)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (89)
+       68 3:romantic 3:romantic       0,0.333,*0.667 (219)
+       69 3:romantic 2:classical   +   0,*0.667,0.333 (109)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (122)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (30)
+       72 3:romantic 3:romantic       0,0.333,*0.667 (141)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (163)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (102)
+       75 3:romantic 3:romantic       0,0.333,*0.667 (111)
+        1  1:baroque  1:baroque       *0.667,0.333,0 (8)
+        2  1:baroque  1:baroque       *0.667,0.333,0 (205)
+        3  1:baroque 2:classical   +   0.333,*0.667,0 (202)
+        4  1:baroque  1:baroque       *0.667,0,0.333 (33)
+        5  1:baroque 2:classical   +   0.333,*0.667,0 (44)
+        6  1:baroque  1:baroque       *0.667,0.333,0 (178)
+        7  1:baroque  1:baroque       *0.667,0.333,0 (42)
+        8  1:baroque  1:baroque       *0.667,0.333,0 (62)
+        9  1:baroque  1:baroque       *0.667,0.333,0 (99)
+       10  1:baroque  1:baroque       *0.667,0.333,0 (30)
+       11  1:baroque  1:baroque       *0.667,0.333,0 (19)
+       12  1:baroque  1:baroque       *0.667,0.333,0 (7)
+       13  1:baroque 2:classical   +   0.333,*0.667,0 (183)
+       14  1:baroque 2:classical   +   0.333,*0.667,0 (113)
+       15  1:baroque 3:romantic   +   0,0.333,*0.667 (114)
+       16  1:baroque  1:baroque       *0.667,0.333,0 (131)
+       17  1:baroque  1:baroque       *0.667,0.333,0 (122)
+       18  1:baroque  1:baroque       *0.667,0.333,0 (97)
+       19  1:baroque  1:baroque       *0.667,0.333,0 (12)
+       20  1:baroque  1:baroque       *0.667,0.333,0 (94)
+       21 2:classical 2:classical       0.333,*0.667,0 (295)
+       22 2:classical 2:classical       0.333,*0.667,0 (178)
+       23 2:classical 2:classical       0.333,*0.667,0 (157)
+       24 2:classical  1:baroque   +   *0.667,0.333,0 (61)
+       25 2:classical  1:baroque   +   *0.667,0.333,0 (22)
+       26 2:classical  1:baroque   +   *0.667,0.333,0 (170)
+       27 2:classical  1:baroque   +   *0.667,0.333,0 (179)
+       28 2:classical  1:baroque   +   *0.667,0.333,0 (118)
+       29 2:classical 3:romantic   +   0,0.333,*0.667 (100)
+       30 2:classical  1:baroque   +   *0.667,0.333,0 (94)
+       31 2:classical 2:classical       0.333,*0.667,0 (142)
+       32 2:classical  1:baroque   +   *0.667,0.333,0 (39)
+       33 2:classical 2:classical       0.333,*0.667,0 (206)
+       34 2:classical 2:classical       0.333,*0.667,0 (306)
+       35 2:classical  1:baroque   +   *0.667,0.333,0 (194)
+       36 2:classical 2:classical       0.333,*0.667,0 (231)
+       37 2:classical 2:classical       0,*0.667,0.333 (309)
+       38 2:classical 3:romantic   +   0,0.333,*0.667 (149)
+       39 2:classical 2:classical       0.333,*0.667,0 (145)
+       40 2:classical 2:classical       0,*0.667,0.333 (200)
+       41 2:classical 3:romantic   +   0,0.333,*0.667 (102)
+       42 2:classical 3:romantic   +   0,0.333,*0.667 (62)
+       43 2:classical 2:classical       0,*0.667,0.333 (79)
+       44 2:classical 2:classical       0.333,*0.667,0 (167)
+       45 2:classical 3:romantic   +   0,0.333,*0.667 (250)
+       46 2:classical 2:classical       0,*0.667,0.333 (133)
+       47 2:classical 2:classical       0,*0.667,0.333 (16)
+       48 2:classical 2:classical       0.333,*0.667,0 (93)
+       49 2:classical 2:classical       0,*0.667,0.333 (95)
+       50 2:classical 2:classical       0,*0.667,0.333 (257)
+       51 2:classical 3:romantic   +   0,0.333,*0.667 (69)
+       52 3:romantic 3:romantic       0,0.333,*0.667 (84)
+       53 3:romantic 3:romantic       0,0.333,*0.667 (160)
+       54 3:romantic 3:romantic       0,0.333,*0.667 (67)
+       55 3:romantic 3:romantic       0,0.333,*0.667 (110)
+       56 3:romantic 2:classical   +   0.333,*0.667,0 (192)
+       57 3:romantic 3:romantic       0,0.333,*0.667 (45)
+       58 3:romantic 3:romantic       0,0.333,*0.667 (105)
+       59 3:romantic 3:romantic       0,0.333,*0.667 (10)
+       60 3:romantic 3:romantic       0,0.333,*0.667 (182)
+       61 3:romantic 3:romantic       0,0.333,*0.667 (32)
+       62 3:romantic  1:baroque   +   *0.667,0.333,0 (68)
+       63 3:romantic 3:romantic       0,0.333,*0.667 (145)
+       64 3:romantic 3:romantic       0,0.333,*0.667 (135)
+       65 3:romantic 3:romantic       0,0.333,*0.667 (41)
+       66 3:romantic 3:romantic       0,0.333,*0.667 (23)
+       67 3:romantic 3:romantic       0,0.333,*0.667 (2)
+       68 3:romantic 2:classical   +   0,*0.667,0.333 (183)
+       69 3:romantic 2:classical   +   0,*0.667,0.333 (57)
+       70 3:romantic 3:romantic       0,0.333,*0.667 (87)
+       71 3:romantic 3:romantic       0,0.333,*0.667 (115)
+       72 3:romantic 2:classical   +   0,*0.667,0.333 (233)
+       73 3:romantic 3:romantic       0,0.333,*0.667 (108)
+       74 3:romantic 3:romantic       0,0.333,*0.667 (157)
+       75 3:romantic 3:romantic       0,0.333,*0.667 (200)
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         534               71.1052 %
+Incorrectly Classified Instances       217               28.8948 %
+Kappa statistic                          0.559 
+Mean absolute error                      0.3009
+Root mean squared error                  0.3904
+Relative absolute error                 68.7005 %
+Root relative squared error             83.416  %
+Total Number of Instances              751     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,598    0,103    0,691      0,598    0,641      0,518    0,811     0,575     baroque
+                 0,706    0,217    0,694      0,706    0,700      0,487    0,746     0,613     classical
+                 0,820    0,125    0,746      0,820    0,781      0,678    0,877     0,695     romantic
+Weighted Avg.    0,711    0,157    0,709      0,711    0,709      0,555    0,805     0,628     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 125  63  21 |   a = baroque
+  47 218  44 |   b = classical
+   9  33 191 |   c = romantic
+
+

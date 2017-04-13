@@ -1,0 +1,186 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     composer dataset-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    751
+Attributes:   28
+              MFCC-0
+              MFCC-1
+              MFCC-2
+              MFCC-3
+              MFCC-4
+              MFCC-5
+              MFCC-6
+              MFCC-7
+              MFCC-8
+              MFCC-9
+              MFCC-10
+              MFCC-11
+              MFCC-12
+              flatness-mean
+              flatness-variance
+              rolloff-mean
+              rolloff-variance
+              centroid-mean
+              centroid-variance
+              flux-mean
+              flux-variance
+              energy-mean
+              energy-variance
+              ZCR-mean
+              ZCR-variance
+              flatness-std
+              flatness-hmean
+              period
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: baroque, classical
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1228 * (normalized) MFCC-0
+ +      -2.0526 * (normalized) MFCC-1
+ +      -0.5246 * (normalized) MFCC-2
+ +      -0.2757 * (normalized) MFCC-3
+ +       0.1189 * (normalized) MFCC-4
+ +       0.5328 * (normalized) MFCC-5
+ +       0.432  * (normalized) MFCC-6
+ +      -0.1978 * (normalized) MFCC-7
+ +       0.5879 * (normalized) MFCC-8
+ +       0.3977 * (normalized) MFCC-9
+ +      -0.203  * (normalized) MFCC-10
+ +      -0.4992 * (normalized) MFCC-11
+ +       0.0703 * (normalized) MFCC-12
+ +       0.2377 * (normalized) flatness-mean
+ +       0.7615 * (normalized) flatness-variance
+ +      -2.069  * (normalized) rolloff-mean
+ +       3.3103 * (normalized) rolloff-variance
+ +       0.4075 * (normalized) centroid-mean
+ +       0.1813 * (normalized) centroid-variance
+ +      -0.4046 * (normalized) flux-mean
+ +      -0.0962 * (normalized) flux-variance
+ +       0.7079 * (normalized) energy-mean
+ +       0.2715 * (normalized) energy-variance
+ +      -2.1759 * (normalized) ZCR-mean
+ +      -0.2869 * (normalized) ZCR-variance
+ +       1.957  * (normalized) flatness-std
+ +       0.2246 * (normalized) flatness-hmean
+ +       1.557 
+
+Number of kernel evaluations: 19292 (72.827% cached)
+
+Classifier for classes: baroque, romantic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.8463 * (normalized) MFCC-0
+ +      -0.5071 * (normalized) MFCC-1
+ +       0.3928 * (normalized) MFCC-2
+ +       0.5294 * (normalized) MFCC-3
+ +       0.5615 * (normalized) MFCC-4
+ +       0.5408 * (normalized) MFCC-5
+ +      -0.249  * (normalized) MFCC-6
+ +      -0.4552 * (normalized) MFCC-7
+ +      -0.2469 * (normalized) MFCC-8
+ +      -0.1734 * (normalized) MFCC-9
+ +      -0.4406 * (normalized) MFCC-10
+ +       0.0414 * (normalized) MFCC-11
+ +      -0.1908 * (normalized) MFCC-12
+ +       2.3831 * (normalized) flatness-mean
+ +       1.6479 * (normalized) flatness-variance
+ +      -1.2606 * (normalized) rolloff-mean
+ +       1.2333 * (normalized) rolloff-variance
+ +      -0.1313 * (normalized) centroid-mean
+ +       0.2921 * (normalized) centroid-variance
+ +      -0.5257 * (normalized) flux-mean
+ +      -0.4236 * (normalized) flux-variance
+ +      -0.5864 * (normalized) energy-mean
+ +      -0.2219 * (normalized) energy-variance
+ +      -2.5813 * (normalized) ZCR-mean
+ +      -0.0126 * (normalized) ZCR-variance
+ +       1.7976 * (normalized) flatness-std
+ +       1.8837 * (normalized) flatness-hmean
+ -       1.9675
+
+Number of kernel evaluations: 7961 (71.604% cached)
+
+Classifier for classes: classical, romantic
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.3293 * (normalized) MFCC-0
+ +       1.0667 * (normalized) MFCC-1
+ +      -0.1921 * (normalized) MFCC-2
+ +       0.4651 * (normalized) MFCC-3
+ +      -0.3181 * (normalized) MFCC-4
+ +       0.4556 * (normalized) MFCC-5
+ +      -0.4578 * (normalized) MFCC-6
+ +      -0.1889 * (normalized) MFCC-7
+ +      -0.455  * (normalized) MFCC-8
+ +      -0.3118 * (normalized) MFCC-9
+ +      -0.0049 * (normalized) MFCC-10
+ +      -0.2474 * (normalized) MFCC-11
+ +       0.047  * (normalized) MFCC-12
+ +       3.5843 * (normalized) flatness-mean
+ +       1.8625 * (normalized) flatness-variance
+ +       1.1348 * (normalized) rolloff-mean
+ +      -0.6804 * (normalized) rolloff-variance
+ +       0.4128 * (normalized) centroid-mean
+ +       0.4412 * (normalized) centroid-variance
+ +       2.1096 * (normalized) flux-mean
+ +       0.1775 * (normalized) flux-variance
+ +       0.0144 * (normalized) energy-mean
+ +       0.361  * (normalized) energy-variance
+ +      -2.0761 * (normalized) ZCR-mean
+ +       0.5807 * (normalized) ZCR-variance
+ +       1.6121 * (normalized) flatness-std
+ +       2.0337 * (normalized) flatness-hmean
+ -       4.8536
+
+Number of kernel evaluations: 24135 (74.532% cached)
+
+
+
+Time taken to build model: 0.07 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         529               70.4394 %
+Incorrectly Classified Instances       222               29.5606 %
+Kappa statistic                          0.5435
+Mean absolute error                      0.303 
+Root mean squared error                  0.3926
+Relative absolute error                 69.1734 %
+Root relative squared error             83.9005 %
+Total Number of Instances              751     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,502    0,063    0,755      0,502    0,603      0,507    0,809     0,587     baroque
+                 0,761    0,276    0,658      0,761    0,706      0,477    0,742     0,599     classical
+                 0,811    0,127    0,741      0,811    0,775      0,668    0,870     0,688     romantic
+Weighted Avg.    0,704    0,171    0,711      0,704    0,699      0,545    0,800     0,623     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 105  84  20 |   a = baroque
+  28 235  46 |   b = classical
+   6  38 189 |   c = romantic
+
+

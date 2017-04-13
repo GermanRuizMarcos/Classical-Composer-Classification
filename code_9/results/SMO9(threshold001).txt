@@ -1,0 +1,1150 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     composer dataset-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    800
+Attributes:   29
+              MFCC-0
+              MFCC-1
+              MFCC-2
+              MFCC-3
+              MFCC-4
+              MFCC-5
+              MFCC-6
+              MFCC-7
+              MFCC-8
+              MFCC-9
+              MFCC-10
+              MFCC-11
+              MFCC-12
+              flatness-mean
+              flatness-variance
+              rolloff-mean
+              rolloff-variance
+              centroid-mean
+              centroid-variance
+              flux-mean
+              flux-variance
+              energy-mean
+              energy-variance
+              ZCR-mean
+              ZCR-variance
+              flatness-std
+              flatness-hmean
+              silences
+              composer
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: bach, beethoven
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1813 * (normalized) MFCC-0
+ +      -0.6184 * (normalized) MFCC-1
+ +      -0.1258 * (normalized) MFCC-2
+ +       0.2097 * (normalized) MFCC-3
+ +       0.7198 * (normalized) MFCC-4
+ +      -0.0421 * (normalized) MFCC-5
+ +       0.1484 * (normalized) MFCC-6
+ +       0.3309 * (normalized) MFCC-7
+ +      -0.042  * (normalized) MFCC-8
+ +       0.0092 * (normalized) MFCC-9
+ +      -0.4034 * (normalized) MFCC-10
+ +      -0.5822 * (normalized) MFCC-11
+ +      -0.5499 * (normalized) MFCC-12
+ +       0.3901 * (normalized) flatness-mean
+ +       1.5414 * (normalized) flatness-variance
+ +      -2.3833 * (normalized) rolloff-mean
+ +       1.5618 * (normalized) rolloff-variance
+ +      -0.2043 * (normalized) centroid-mean
+ +       0.0048 * (normalized) centroid-variance
+ +      -1.7733 * (normalized) flux-mean
+ +       0.0206 * (normalized) flux-variance
+ +       0.7861 * (normalized) energy-mean
+ +       0.2771 * (normalized) energy-variance
+ +      -1.528  * (normalized) ZCR-mean
+ +       1.0016 * (normalized) ZCR-variance
+ +       2.4899 * (normalized) flatness-std
+ +       0.0934 * (normalized) flatness-hmean
+ +       1.1026 * (normalized) silences
+ +       0.0324
+
+Number of kernel evaluations: 4169 (75.263% cached)
+
+Classifier for classes: bach, chopin
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.791  * (normalized) MFCC-0
+ +      -0.2432 * (normalized) MFCC-1
+ +      -0.0382 * (normalized) MFCC-2
+ +       0.5244 * (normalized) MFCC-3
+ +       0.2986 * (normalized) MFCC-4
+ +       0.3617 * (normalized) MFCC-5
+ +       0.2477 * (normalized) MFCC-6
+ +       0.2886 * (normalized) MFCC-7
+ +       0.1297 * (normalized) MFCC-8
+ +       0.2054 * (normalized) MFCC-9
+ +      -0.1058 * (normalized) MFCC-10
+ +       0.1331 * (normalized) MFCC-11
+ +       0.3577 * (normalized) MFCC-12
+ +       1.7251 * (normalized) flatness-mean
+ +       1.7904 * (normalized) flatness-variance
+ +       0.2577 * (normalized) rolloff-mean
+ +      -0.7547 * (normalized) rolloff-variance
+ +      -0.3728 * (normalized) centroid-mean
+ +       0.0034 * (normalized) centroid-variance
+ +      -1.1649 * (normalized) flux-mean
+ +      -0.3074 * (normalized) flux-variance
+ +      -0.1974 * (normalized) energy-mean
+ +       0.1536 * (normalized) energy-variance
+ +      -2.0147 * (normalized) ZCR-mean
+ +      -0.4157 * (normalized) ZCR-variance
+ +       1.9563 * (normalized) flatness-std
+ +       0.7476 * (normalized) flatness-hmean
+ +       0.9024 * (normalized) silences
+ -       3.4355
+
+Number of kernel evaluations: 2576 (78.236% cached)
+
+Classifier for classes: bach, haydn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.4623 * (normalized) MFCC-0
+ +      -0.3607 * (normalized) MFCC-1
+ +      -0.6149 * (normalized) MFCC-2
+ +      -0.4542 * (normalized) MFCC-3
+ +       0.0299 * (normalized) MFCC-4
+ +       0.1392 * (normalized) MFCC-5
+ +       1.2169 * (normalized) MFCC-6
+ +      -0.0646 * (normalized) MFCC-7
+ +       0.2761 * (normalized) MFCC-8
+ +       0.5816 * (normalized) MFCC-9
+ +       0.9741 * (normalized) MFCC-10
+ +      -0.1084 * (normalized) MFCC-11
+ +      -0.1332 * (normalized) MFCC-12
+ +      -1.4389 * (normalized) flatness-mean
+ +       0.6161 * (normalized) flatness-variance
+ +      -1.3735 * (normalized) rolloff-mean
+ +       4.8689 * (normalized) rolloff-variance
+ +       0.4292 * (normalized) centroid-mean
+ +       0.0612 * (normalized) centroid-variance
+ +      -1.3544 * (normalized) flux-mean
+ +      -0.1419 * (normalized) flux-variance
+ +       0.3599 * (normalized) energy-mean
+ +       0.0011 * (normalized) energy-variance
+ +      -2.0596 * (normalized) ZCR-mean
+ +       1.2808 * (normalized) ZCR-variance
+ +       2.1886 * (normalized) flatness-std
+ +      -1.4555 * (normalized) flatness-hmean
+ +      -1.926  * (normalized) silences
+ +       2.4874
+
+Number of kernel evaluations: 5110 (75.308% cached)
+
+Classifier for classes: bach, liszt
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.5026 * (normalized) MFCC-0
+ +      -1.129  * (normalized) MFCC-1
+ +       1.0057 * (normalized) MFCC-2
+ +       0.1875 * (normalized) MFCC-3
+ +       0.418  * (normalized) MFCC-4
+ +       0.1043 * (normalized) MFCC-5
+ +       0.6181 * (normalized) MFCC-6
+ +      -0.2797 * (normalized) MFCC-7
+ +       0.2946 * (normalized) MFCC-8
+ +       0.0277 * (normalized) MFCC-9
+ +      -0.012  * (normalized) MFCC-10
+ +      -0.0444 * (normalized) MFCC-11
+ +      -0.0552 * (normalized) MFCC-12
+ +       0.3263 * (normalized) flatness-mean
+ +       0.5937 * (normalized) flatness-variance
+ +      -0.9038 * (normalized) rolloff-mean
+ +       0.9181 * (normalized) rolloff-variance
+ +       0.0977 * (normalized) centroid-mean
+ +       0.0706 * (normalized) centroid-variance
+ +      -0.4553 * (normalized) flux-mean
+ +       0.2866 * (normalized) flux-variance
+ +      -0.2725 * (normalized) energy-mean
+ +      -0.0657 * (normalized) energy-variance
+ +      -0.996  * (normalized) ZCR-mean
+ +       0.3834 * (normalized) ZCR-variance
+ +       0.8113 * (normalized) flatness-std
+ +       0.1616 * (normalized) flatness-hmean
+ +       0.3326 * (normalized) silences
+ -       0.1318
+
+Number of kernel evaluations: 3351 (82.821% cached)
+
+Classifier for classes: bach, mendelssohn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.5096 * (normalized) MFCC-0
+ +       0.0166 * (normalized) MFCC-1
+ +       0.1591 * (normalized) MFCC-2
+ +      -0.1152 * (normalized) MFCC-3
+ +       0.0264 * (normalized) MFCC-4
+ +       0.4059 * (normalized) MFCC-5
+ +       0.507  * (normalized) MFCC-6
+ +       0.4692 * (normalized) MFCC-7
+ +       0.6204 * (normalized) MFCC-8
+ +       0.4894 * (normalized) MFCC-9
+ +      -0.1129 * (normalized) MFCC-10
+ +      -0.4195 * (normalized) MFCC-11
+ +      -0.0314 * (normalized) MFCC-12
+ +       0.0747 * (normalized) flatness-mean
+ +       0.6699 * (normalized) flatness-variance
+ +      -3.9129 * (normalized) rolloff-mean
+ +       0.9935 * (normalized) rolloff-variance
+ +      -0.2485 * (normalized) centroid-mean
+ +       0.0081 * (normalized) centroid-variance
+ +      -1.4064 * (normalized) flux-mean
+ +      -0.5896 * (normalized) flux-variance
+ +       1.8054 * (normalized) energy-mean
+ +       0.5744 * (normalized) energy-variance
+ +      -1.4129 * (normalized) ZCR-mean
+ +       1.1516 * (normalized) ZCR-variance
+ +       1.9194 * (normalized) flatness-std
+ +      -0.127  * (normalized) flatness-hmean
+ +       0.0632 * (normalized) silences
+ +       1.4545
+
+Number of kernel evaluations: 4535 (74.361% cached)
+
+Classifier for classes: bach, mozart
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.0592 * (normalized) MFCC-0
+ +      -1.1601 * (normalized) MFCC-1
+ +       0.2039 * (normalized) MFCC-2
+ +      -0.178  * (normalized) MFCC-3
+ +      -0.051  * (normalized) MFCC-4
+ +      -0.0144 * (normalized) MFCC-5
+ +       0.2068 * (normalized) MFCC-6
+ +       0.1025 * (normalized) MFCC-7
+ +       0.0567 * (normalized) MFCC-8
+ +       0.7206 * (normalized) MFCC-9
+ +       0.0511 * (normalized) MFCC-10
+ +      -0.0159 * (normalized) MFCC-11
+ +       0.0008 * (normalized) MFCC-12
+ +       0.6835 * (normalized) flatness-mean
+ +       1.3746 * (normalized) flatness-variance
+ +      -1.786  * (normalized) rolloff-mean
+ +       2.0549 * (normalized) rolloff-variance
+ +       0.0974 * (normalized) centroid-mean
+ +       0.0529 * (normalized) centroid-variance
+ +      -2.9861 * (normalized) flux-mean
+ +      -0.6757 * (normalized) flux-variance
+ +      -0.2494 * (normalized) energy-mean
+ +      -0.0736 * (normalized) energy-variance
+ +      -1.844  * (normalized) ZCR-mean
+ +       0.8902 * (normalized) ZCR-variance
+ +       2.6765 * (normalized) flatness-std
+ +       0.3422 * (normalized) flatness-hmean
+ +      -0.1046 * (normalized) silences
+ -       0.3224
+
+Number of kernel evaluations: 3795 (70.488% cached)
+
+Classifier for classes: bach, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.5122 * (normalized) MFCC-0
+ +       0.4562 * (normalized) MFCC-1
+ +      -0.1358 * (normalized) MFCC-2
+ +       0.356  * (normalized) MFCC-3
+ +       0.3579 * (normalized) MFCC-4
+ +      -0.1167 * (normalized) MFCC-5
+ +       0.4105 * (normalized) MFCC-6
+ +       0.0689 * (normalized) MFCC-7
+ +       0.0243 * (normalized) MFCC-8
+ +       1.0299 * (normalized) MFCC-9
+ +       0.6777 * (normalized) MFCC-10
+ +      -0.3053 * (normalized) MFCC-11
+ +      -0.0262 * (normalized) MFCC-12
+ +      -0.6484 * (normalized) flatness-mean
+ +       1.9602 * (normalized) flatness-variance
+ +      -0.9994 * (normalized) rolloff-mean
+ +       1.9967 * (normalized) rolloff-variance
+ +       0.0557 * (normalized) centroid-mean
+ +       0.0042 * (normalized) centroid-variance
+ +      -1.3634 * (normalized) flux-mean
+ +       0.0533 * (normalized) flux-variance
+ +       0.4895 * (normalized) energy-mean
+ +       0.2457 * (normalized) energy-variance
+ +      -1.3864 * (normalized) ZCR-mean
+ +       2.0001 * (normalized) ZCR-variance
+ +       3.8173 * (normalized) flatness-std
+ +      -0.974  * (normalized) flatness-hmean
+ +       0.524  * (normalized) silences
+ -       1.6729
+
+Number of kernel evaluations: 5103 (75.319% cached)
+
+Classifier for classes: beethoven, chopin
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.4523 * (normalized) MFCC-0
+ +       0.2695 * (normalized) MFCC-1
+ +      -0.1025 * (normalized) MFCC-2
+ +       0.1854 * (normalized) MFCC-3
+ +      -0.3457 * (normalized) MFCC-4
+ +       0.3027 * (normalized) MFCC-5
+ +       0.0667 * (normalized) MFCC-6
+ +       0.0148 * (normalized) MFCC-7
+ +       0.1645 * (normalized) MFCC-8
+ +      -0.0574 * (normalized) MFCC-9
+ +       0.1752 * (normalized) MFCC-10
+ +      -0.325  * (normalized) MFCC-11
+ +       0.6046 * (normalized) MFCC-12
+ +       3.0929 * (normalized) flatness-mean
+ +       1.9943 * (normalized) flatness-variance
+ +       2.6754 * (normalized) rolloff-mean
+ +      -2.5613 * (normalized) rolloff-variance
+ +      -0.7548 * (normalized) centroid-mean
+ +      -0.1652 * (normalized) centroid-variance
+ +       0.719  * (normalized) flux-mean
+ +      -0.1027 * (normalized) flux-variance
+ +      -0.4482 * (normalized) energy-mean
+ +       0.0927 * (normalized) energy-variance
+ +      -1.5763 * (normalized) ZCR-mean
+ +      -0.5988 * (normalized) ZCR-variance
+ +       1.9447 * (normalized) flatness-std
+ +       1.7006 * (normalized) flatness-hmean
+ +      -0.3773 * (normalized) silences
+ -       5.4725
+
+Number of kernel evaluations: 3933 (76.634% cached)
+
+Classifier for classes: beethoven, haydn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.2882 * (normalized) MFCC-0
+ +       0.5487 * (normalized) MFCC-1
+ +      -0.1728 * (normalized) MFCC-2
+ +       0.0579 * (normalized) MFCC-3
+ +       0.1435 * (normalized) MFCC-4
+ +       0.57   * (normalized) MFCC-5
+ +       0.2717 * (normalized) MFCC-6
+ +       0.1366 * (normalized) MFCC-7
+ +       0.1147 * (normalized) MFCC-8
+ +       0.4265 * (normalized) MFCC-9
+ +       0.2253 * (normalized) MFCC-10
+ +       0.5536 * (normalized) MFCC-11
+ +       0.4931 * (normalized) MFCC-12
+ +      -2.4539 * (normalized) flatness-mean
+ +      -1.3859 * (normalized) flatness-variance
+ +       1.2963 * (normalized) rolloff-mean
+ +       1.1545 * (normalized) rolloff-variance
+ +       0.9391 * (normalized) centroid-mean
+ +       0.2718 * (normalized) centroid-variance
+ +      -0.2354 * (normalized) flux-mean
+ +      -0.0134 * (normalized) flux-variance
+ +      -0.1641 * (normalized) energy-mean
+ +       0.1903 * (normalized) energy-variance
+ +       1.1623 * (normalized) ZCR-mean
+ +      -0.3078 * (normalized) ZCR-variance
+ +      -1.6865 * (normalized) flatness-std
+ +      -1.9494 * (normalized) flatness-hmean
+ +      -1.6118 * (normalized) silences
+ +       1.792 
+
+Number of kernel evaluations: 2374 (77.436% cached)
+
+Classifier for classes: beethoven, liszt
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -4.8726 * (normalized) MFCC-0
+ +      -0.9676 * (normalized) MFCC-1
+ +       0.7542 * (normalized) MFCC-2
+ +       0.5954 * (normalized) MFCC-3
+ +       0.1449 * (normalized) MFCC-4
+ +       0.0515 * (normalized) MFCC-5
+ +      -0.037  * (normalized) MFCC-6
+ +      -0.2209 * (normalized) MFCC-7
+ +       0.1356 * (normalized) MFCC-8
+ +      -0.2318 * (normalized) MFCC-9
+ +       0.1324 * (normalized) MFCC-10
+ +       0.005  * (normalized) MFCC-11
+ +      -0.1639 * (normalized) MFCC-12
+ +       0.5486 * (normalized) flatness-mean
+ +       0.1774 * (normalized) flatness-variance
+ +       0.4489 * (normalized) rolloff-mean
+ +      -0.4844 * (normalized) rolloff-variance
+ +       0.1227 * (normalized) centroid-mean
+ +       0.0665 * (normalized) centroid-variance
+ +       0.5207 * (normalized) flux-mean
+ +       0.0166 * (normalized) flux-variance
+ +       0.0672 * (normalized) energy-mean
+ +       0.0644 * (normalized) energy-variance
+ +      -0.2109 * (normalized) ZCR-mean
+ +       0.2248 * (normalized) ZCR-variance
+ +       0.2367 * (normalized) flatness-std
+ +       0.3673 * (normalized) flatness-hmean
+ +      -0.4023 * (normalized) silences
+ +       0.3023
+
+Number of kernel evaluations: 4760 (84.361% cached)
+
+Classifier for classes: beethoven, mendelssohn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.6646 * (normalized) MFCC-0
+ +       1.2562 * (normalized) MFCC-1
+ +       0.355  * (normalized) MFCC-2
+ +      -0.3142 * (normalized) MFCC-3
+ +      -0.2807 * (normalized) MFCC-4
+ +       0.8884 * (normalized) MFCC-5
+ +       0.2947 * (normalized) MFCC-6
+ +      -0.1718 * (normalized) MFCC-7
+ +       0.1066 * (normalized) MFCC-8
+ +       0.5451 * (normalized) MFCC-9
+ +       0.1324 * (normalized) MFCC-10
+ +      -0.1042 * (normalized) MFCC-11
+ +       0.4706 * (normalized) MFCC-12
+ +      -1.4469 * (normalized) flatness-mean
+ +      -1.6895 * (normalized) flatness-variance
+ +      -0.2419 * (normalized) rolloff-mean
+ +      -2.6624 * (normalized) rolloff-variance
+ +      -0.16   * (normalized) centroid-mean
+ +      -0.11   * (normalized) centroid-variance
+ +       0.019  * (normalized) flux-mean
+ +      -0.3231 * (normalized) flux-variance
+ +       0.0267 * (normalized) energy-mean
+ +      -0.1819 * (normalized) energy-variance
+ +       1.0849 * (normalized) ZCR-mean
+ +       0.0052 * (normalized) ZCR-variance
+ +      -2.1493 * (normalized) flatness-std
+ +      -1.1177 * (normalized) flatness-hmean
+ +       0.0469 * (normalized) silences
+ +       1.3977
+
+Number of kernel evaluations: 3343 (74.949% cached)
+
+Classifier for classes: beethoven, mozart
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.5086 * (normalized) MFCC-0
+ +      -0.4365 * (normalized) MFCC-1
+ +       0.2048 * (normalized) MFCC-2
+ +      -0.8187 * (normalized) MFCC-3
+ +      -0.2129 * (normalized) MFCC-4
+ +       0.6193 * (normalized) MFCC-5
+ +      -0.0332 * (normalized) MFCC-6
+ +      -0.0776 * (normalized) MFCC-7
+ +       0.3421 * (normalized) MFCC-8
+ +       0.1894 * (normalized) MFCC-9
+ +       0.9806 * (normalized) MFCC-10
+ +       0.1659 * (normalized) MFCC-11
+ +       0.5071 * (normalized) MFCC-12
+ +      -0.2918 * (normalized) flatness-mean
+ +      -0.2903 * (normalized) flatness-variance
+ +       2.6638 * (normalized) rolloff-mean
+ +      -1.5919 * (normalized) rolloff-variance
+ +      -0.0193 * (normalized) centroid-mean
+ +      -0.1097 * (normalized) centroid-variance
+ +      -0.7335 * (normalized) flux-mean
+ +      -0.6664 * (normalized) flux-variance
+ +      -1.1113 * (normalized) energy-mean
+ +      -0.3683 * (normalized) energy-variance
+ +       1.2303 * (normalized) ZCR-mean
+ +      -0.6344 * (normalized) ZCR-variance
+ +      -0.4448 * (normalized) flatness-std
+ +      -0.206  * (normalized) flatness-hmean
+ +      -0.9537 * (normalized) silences
+ -       1.5864
+
+Number of kernel evaluations: 4067 (70.003% cached)
+
+Classifier for classes: beethoven, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.248  * (normalized) MFCC-0
+ +       1.1174 * (normalized) MFCC-1
+ +       0.1277 * (normalized) MFCC-2
+ +       0.1421 * (normalized) MFCC-3
+ +      -0.2616 * (normalized) MFCC-4
+ +      -0.0097 * (normalized) MFCC-5
+ +       0.6493 * (normalized) MFCC-6
+ +       0.0707 * (normalized) MFCC-7
+ +       0.3818 * (normalized) MFCC-8
+ +       0.604  * (normalized) MFCC-9
+ +       0.4212 * (normalized) MFCC-10
+ +       0.3648 * (normalized) MFCC-11
+ +       0.975  * (normalized) MFCC-12
+ +      -1.9346 * (normalized) flatness-mean
+ +      -1.1736 * (normalized) flatness-variance
+ +       2.9551 * (normalized) rolloff-mean
+ +      -1.1081 * (normalized) rolloff-variance
+ +       0.2177 * (normalized) centroid-mean
+ +       0.0005 * (normalized) centroid-variance
+ +      -0.0894 * (normalized) flux-mean
+ +      -0.1329 * (normalized) flux-variance
+ +      -0.288  * (normalized) energy-mean
+ +       0.0299 * (normalized) energy-variance
+ +       1.3552 * (normalized) ZCR-mean
+ +      -0.55   * (normalized) ZCR-variance
+ +      -1.2986 * (normalized) flatness-std
+ +      -1.5663 * (normalized) flatness-hmean
+ +      -0.8245 * (normalized) silences
+ -       0.7091
+
+Number of kernel evaluations: 3544 (73.341% cached)
+
+Classifier for classes: chopin, haydn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.528  * (normalized) MFCC-0
+ +       0.1453 * (normalized) MFCC-1
+ +       0.0451 * (normalized) MFCC-2
+ +      -0.0487 * (normalized) MFCC-3
+ +       0.2107 * (normalized) MFCC-4
+ +      -0.0324 * (normalized) MFCC-5
+ +       0.1983 * (normalized) MFCC-6
+ +       0.0124 * (normalized) MFCC-7
+ +       0.4368 * (normalized) MFCC-8
+ +       0.0171 * (normalized) MFCC-9
+ +      -0.0662 * (normalized) MFCC-10
+ +       0.1135 * (normalized) MFCC-11
+ +      -0.3081 * (normalized) MFCC-12
+ +      -2.7608 * (normalized) flatness-mean
+ +      -1.8082 * (normalized) flatness-variance
+ +      -0.9044 * (normalized) rolloff-mean
+ +       1.3522 * (normalized) rolloff-variance
+ +       0.579  * (normalized) centroid-mean
+ +       0.1366 * (normalized) centroid-variance
+ +      -0.1887 * (normalized) flux-mean
+ +       0.0941 * (normalized) flux-variance
+ +       0.093  * (normalized) energy-mean
+ +      -0.1583 * (normalized) energy-variance
+ +       1.4586 * (normalized) ZCR-mean
+ +       0.3426 * (normalized) ZCR-variance
+ +      -1.9105 * (normalized) flatness-std
+ +      -1.4381 * (normalized) flatness-hmean
+ +      -0.3513 * (normalized) silences
+ +       3.5241
+
+Number of kernel evaluations: 2469 (73.611% cached)
+
+Classifier for classes: chopin, liszt
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -5.0373 * (normalized) MFCC-0
+ +      -1.2404 * (normalized) MFCC-1
+ +       0.7189 * (normalized) MFCC-2
+ +       0.5898 * (normalized) MFCC-3
+ +       0.0703 * (normalized) MFCC-4
+ +      -0.1249 * (normalized) MFCC-5
+ +       0.3627 * (normalized) MFCC-6
+ +      -0.1598 * (normalized) MFCC-7
+ +       0.2842 * (normalized) MFCC-8
+ +      -0.0586 * (normalized) MFCC-9
+ +       0.1273 * (normalized) MFCC-10
+ +      -0.066  * (normalized) MFCC-11
+ +      -0.4599 * (normalized) MFCC-12
+ +      -0.8793 * (normalized) flatness-mean
+ +      -0.9813 * (normalized) flatness-variance
+ +      -0.9195 * (normalized) rolloff-mean
+ +       0.7445 * (normalized) rolloff-variance
+ +       0.1952 * (normalized) centroid-mean
+ +       0.0444 * (normalized) centroid-variance
+ +      -0.0618 * (normalized) flux-mean
+ +       0.0931 * (normalized) flux-variance
+ +       0.0109 * (normalized) energy-mean
+ +       0      * (normalized) energy-variance
+ +       0.5086 * (normalized) ZCR-mean
+ +       0.3236 * (normalized) ZCR-variance
+ +      -0.8404 * (normalized) flatness-std
+ +       0.0144 * (normalized) flatness-hmean
+ +      -0.1802 * (normalized) silences
+ +       2.7337
+
+Number of kernel evaluations: 3700 (76.846% cached)
+
+Classifier for classes: chopin, mendelssohn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1349 * (normalized) MFCC-0
+ +       0.492  * (normalized) MFCC-1
+ +      -0.01   * (normalized) MFCC-2
+ +       0.1466 * (normalized) MFCC-3
+ +       0.4482 * (normalized) MFCC-4
+ +      -0.0425 * (normalized) MFCC-5
+ +       0.0548 * (normalized) MFCC-6
+ +      -0.1186 * (normalized) MFCC-7
+ +       0.2565 * (normalized) MFCC-8
+ +      -0.2991 * (normalized) MFCC-9
+ +      -0.4991 * (normalized) MFCC-10
+ +      -0.2988 * (normalized) MFCC-11
+ +      -0.1617 * (normalized) MFCC-12
+ +      -2.8152 * (normalized) flatness-mean
+ +      -2.334  * (normalized) flatness-variance
+ +      -2.8821 * (normalized) rolloff-mean
+ +       1.1289 * (normalized) rolloff-variance
+ +       0.3201 * (normalized) centroid-mean
+ +       0.0309 * (normalized) centroid-variance
+ +      -0.6444 * (normalized) flux-mean
+ +       0.0742 * (normalized) flux-variance
+ +       0.8161 * (normalized) energy-mean
+ +      -0.0295 * (normalized) energy-variance
+ +       0.8542 * (normalized) ZCR-mean
+ +       0.6513 * (normalized) ZCR-variance
+ +      -2.4474 * (normalized) flatness-std
+ +      -1.4829 * (normalized) flatness-hmean
+ +       0.4695 * (normalized) silences
+ +       5.0611
+
+Number of kernel evaluations: 3054 (73.788% cached)
+
+Classifier for classes: chopin, mozart
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.1588 * (normalized) MFCC-0
+ +      -0.7176 * (normalized) MFCC-1
+ +      -0.1077 * (normalized) MFCC-2
+ +      -0.5083 * (normalized) MFCC-3
+ +      -0.0873 * (normalized) MFCC-4
+ +      -0.2466 * (normalized) MFCC-5
+ +      -0.2702 * (normalized) MFCC-6
+ +      -0.2707 * (normalized) MFCC-7
+ +       0.4865 * (normalized) MFCC-8
+ +       0.1063 * (normalized) MFCC-9
+ +      -0.0833 * (normalized) MFCC-10
+ +      -0.3971 * (normalized) MFCC-11
+ +      -0.869  * (normalized) MFCC-12
+ +      -2.9756 * (normalized) flatness-mean
+ +      -1.9112 * (normalized) flatness-variance
+ +      -1.5454 * (normalized) rolloff-mean
+ +       1.1644 * (normalized) rolloff-variance
+ +       0.4491 * (normalized) centroid-mean
+ +       0.0408 * (normalized) centroid-variance
+ +      -1.0918 * (normalized) flux-mean
+ +       0.0904 * (normalized) flux-variance
+ +       0.1192 * (normalized) energy-mean
+ +      -0.1615 * (normalized) energy-variance
+ +       1.8559 * (normalized) ZCR-mean
+ +       0.5894 * (normalized) ZCR-variance
+ +      -1.9304 * (normalized) flatness-std
+ +      -1.624  * (normalized) flatness-hmean
+ +      -0.7407 * (normalized) silences
+ +       6.2368
+
+Number of kernel evaluations: 2342 (72.3% cached)
+
+Classifier for classes: chopin, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1093 * (normalized) MFCC-0
+ +       0.2427 * (normalized) MFCC-1
+ +       0.1491 * (normalized) MFCC-2
+ +      -0.1152 * (normalized) MFCC-3
+ +       0.2489 * (normalized) MFCC-4
+ +       0.0067 * (normalized) MFCC-5
+ +       0.3686 * (normalized) MFCC-6
+ +      -0.0081 * (normalized) MFCC-7
+ +       0.1398 * (normalized) MFCC-8
+ +       0.368  * (normalized) MFCC-9
+ +      -0.0773 * (normalized) MFCC-10
+ +      -0.2018 * (normalized) MFCC-11
+ +      -0.0307 * (normalized) MFCC-12
+ +      -2.9599 * (normalized) flatness-mean
+ +      -1.6152 * (normalized) flatness-variance
+ +       0.3805 * (normalized) rolloff-mean
+ +       0.2445 * (normalized) rolloff-variance
+ +       0.356  * (normalized) centroid-mean
+ +       0.0061 * (normalized) centroid-variance
+ +      -0.6303 * (normalized) flux-mean
+ +       0.2243 * (normalized) flux-variance
+ +       0.4306 * (normalized) energy-mean
+ +       0.0773 * (normalized) energy-variance
+ +       1.9614 * (normalized) ZCR-mean
+ +       0.462  * (normalized) ZCR-variance
+ +      -1.7793 * (normalized) flatness-std
+ +      -2.4188 * (normalized) flatness-hmean
+ +      -0.1113 * (normalized) silences
+ +       3.3648
+
+Number of kernel evaluations: 2439 (72.205% cached)
+
+Classifier for classes: haydn, liszt
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.076  * (normalized) MFCC-0
+ +      -1.511  * (normalized) MFCC-1
+ +       0.6812 * (normalized) MFCC-2
+ +       0.5783 * (normalized) MFCC-3
+ +       0.0488 * (normalized) MFCC-4
+ +      -0.3858 * (normalized) MFCC-5
+ +      -0.3622 * (normalized) MFCC-6
+ +      -0.1387 * (normalized) MFCC-7
+ +      -0.2646 * (normalized) MFCC-8
+ +      -0.2676 * (normalized) MFCC-9
+ +      -0.01   * (normalized) MFCC-10
+ +      -0.0349 * (normalized) MFCC-11
+ +       0.0207 * (normalized) MFCC-12
+ +       1.7127 * (normalized) flatness-mean
+ +       1.0416 * (normalized) flatness-variance
+ +      -0.431  * (normalized) rolloff-mean
+ +      -0.42   * (normalized) rolloff-variance
+ +      -0.1235 * (normalized) centroid-mean
+ +       0.0346 * (normalized) centroid-variance
+ +       0.5463 * (normalized) flux-mean
+ +       0.2443 * (normalized) flux-variance
+ +      -0.167  * (normalized) energy-mean
+ +      -0.1511 * (normalized) energy-variance
+ +      -0.816  * (normalized) ZCR-mean
+ +       0.2259 * (normalized) ZCR-variance
+ +       1.2689 * (normalized) flatness-std
+ +       1.3224 * (normalized) flatness-hmean
+ +      -0.0604 * (normalized) silences
+ -       0.3718
+
+Number of kernel evaluations: 2169 (73.196% cached)
+
+Classifier for classes: haydn, mendelssohn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.3843 * (normalized) MFCC-0
+ +       0.2298 * (normalized) MFCC-1
+ +       0.2695 * (normalized) MFCC-2
+ +       0.0935 * (normalized) MFCC-3
+ +      -0.0975 * (normalized) MFCC-4
+ +      -0.1122 * (normalized) MFCC-5
+ +      -0.4046 * (normalized) MFCC-6
+ +       0.0383 * (normalized) MFCC-7
+ +       0.1661 * (normalized) MFCC-8
+ +      -0.1881 * (normalized) MFCC-9
+ +      -0.2333 * (normalized) MFCC-10
+ +      -0.326  * (normalized) MFCC-11
+ +       0.1878 * (normalized) MFCC-12
+ +       1.1374 * (normalized) flatness-mean
+ +       0.234  * (normalized) flatness-variance
+ +      -2.9185 * (normalized) rolloff-mean
+ +      -3.4435 * (normalized) rolloff-variance
+ +      -1.1677 * (normalized) centroid-mean
+ +      -0.3088 * (normalized) centroid-variance
+ +       0.603  * (normalized) flux-mean
+ +      -0.5726 * (normalized) flux-variance
+ +       1.2528 * (normalized) energy-mean
+ +      -0.2913 * (normalized) energy-variance
+ +      -0.0191 * (normalized) ZCR-mean
+ +       0.3354 * (normalized) ZCR-variance
+ +       0.1684 * (normalized) flatness-std
+ +       0.9099 * (normalized) flatness-hmean
+ +       1.4625 * (normalized) silences
+ -       0.0417
+
+Number of kernel evaluations: 4820 (75.73% cached)
+
+Classifier for classes: haydn, mozart
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.7918 * (normalized) MFCC-0
+ +      -0.2997 * (normalized) MFCC-1
+ +       0.2406 * (normalized) MFCC-2
+ +      -0.7554 * (normalized) MFCC-3
+ +      -0.4201 * (normalized) MFCC-4
+ +      -0.9577 * (normalized) MFCC-5
+ +      -0.4604 * (normalized) MFCC-6
+ +       0.1607 * (normalized) MFCC-7
+ +      -0.2425 * (normalized) MFCC-8
+ +      -0.3353 * (normalized) MFCC-9
+ +       0.0031 * (normalized) MFCC-10
+ +       0.2484 * (normalized) MFCC-11
+ +       0.0624 * (normalized) MFCC-12
+ +       1.8311 * (normalized) flatness-mean
+ +       0.7135 * (normalized) flatness-variance
+ +      -1.0031 * (normalized) rolloff-mean
+ +      -2.3426 * (normalized) rolloff-variance
+ +      -0.9081 * (normalized) centroid-mean
+ +      -0.2812 * (normalized) centroid-variance
+ +      -0.8166 * (normalized) flux-mean
+ +      -0.4489 * (normalized) flux-variance
+ +      -0.5934 * (normalized) energy-mean
+ +      -0.0788 * (normalized) energy-variance
+ +      -0.7334 * (normalized) ZCR-mean
+ +      -0.1196 * (normalized) ZCR-variance
+ +       0.9693 * (normalized) flatness-std
+ +       1.4997 * (normalized) flatness-hmean
+ +       1.0334 * (normalized) silences
+ -       1.1716
+
+Number of kernel evaluations: 3771 (70.307% cached)
+
+Classifier for classes: haydn, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         1.7029 * (normalized) MFCC-0
+ +       0.7736 * (normalized) MFCC-1
+ +       0.8719 * (normalized) MFCC-2
+ +       0.8511 * (normalized) MFCC-3
+ +       0.0583 * (normalized) MFCC-4
+ +      -0.8674 * (normalized) MFCC-5
+ +      -0.1963 * (normalized) MFCC-6
+ +       0.2606 * (normalized) MFCC-7
+ +      -0.5117 * (normalized) MFCC-8
+ +      -0.429  * (normalized) MFCC-9
+ +      -0.1483 * (normalized) MFCC-10
+ +      -0.0552 * (normalized) MFCC-11
+ +      -0.0557 * (normalized) MFCC-12
+ +       0.0327 * (normalized) flatness-mean
+ +       0.2136 * (normalized) flatness-variance
+ +      -0.8007 * (normalized) rolloff-mean
+ +      -3.4475 * (normalized) rolloff-variance
+ +      -0.8833 * (normalized) centroid-mean
+ +      -0.2381 * (normalized) centroid-variance
+ +      -0.0959 * (normalized) flux-mean
+ +       0.1007 * (normalized) flux-variance
+ +      -0.1922 * (normalized) energy-mean
+ +       0.137  * (normalized) energy-variance
+ +       0.3825 * (normalized) ZCR-mean
+ +       0.9137 * (normalized) ZCR-variance
+ +       0.2699 * (normalized) flatness-std
+ +      -0.1797 * (normalized) flatness-hmean
+ +       3.4246 * (normalized) silences
+ -       2.5369
+
+Number of kernel evaluations: 4074 (76.454% cached)
+
+Classifier for classes: liszt, mendelssohn
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.9043 * (normalized) MFCC-0
+ +       1.5352 * (normalized) MFCC-1
+ +      -0.7411 * (normalized) MFCC-2
+ +      -0.2691 * (normalized) MFCC-3
+ +      -0.1505 * (normalized) MFCC-4
+ +       0.1502 * (normalized) MFCC-5
+ +      -0.0235 * (normalized) MFCC-6
+ +      -0.0398 * (normalized) MFCC-7
+ +      -0.0097 * (normalized) MFCC-8
+ +      -0.0572 * (normalized) MFCC-9
+ +      -0.518  * (normalized) MFCC-10
+ +      -0.3516 * (normalized) MFCC-11
+ +       0.3255 * (normalized) MFCC-12
+ +      -0.9265 * (normalized) flatness-mean
+ +      -0.4268 * (normalized) flatness-variance
+ +      -0.1866 * (normalized) rolloff-mean
+ +      -0.5817 * (normalized) rolloff-variance
+ +      -0.0817 * (normalized) centroid-mean
+ +      -0.0413 * (normalized) centroid-variance
+ +      -0.3625 * (normalized) flux-mean
+ +      -0.1191 * (normalized) flux-variance
+ +       0.0852 * (normalized) energy-mean
+ +      -0.084  * (normalized) energy-variance
+ +       0.5827 * (normalized) ZCR-mean
+ +      -0.3211 * (normalized) ZCR-variance
+ +      -0.5692 * (normalized) flatness-std
+ +      -0.7345 * (normalized) flatness-hmean
+ +       0.0442 * (normalized) silences
+ +       0.782 
+
+Number of kernel evaluations: 3915 (83.623% cached)
+
+Classifier for classes: liszt, mozart
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         4.2276 * (normalized) MFCC-0
+ +       0.5626 * (normalized) MFCC-1
+ +      -0.3597 * (normalized) MFCC-2
+ +      -0.4569 * (normalized) MFCC-3
+ +      -0.0266 * (normalized) MFCC-4
+ +       0.1714 * (normalized) MFCC-5
+ +      -0.0439 * (normalized) MFCC-6
+ +       0.0869 * (normalized) MFCC-7
+ +      -0.022  * (normalized) MFCC-8
+ +      -0.1175 * (normalized) MFCC-9
+ +       0.111  * (normalized) MFCC-10
+ +       0.0232 * (normalized) MFCC-11
+ +       0.063  * (normalized) MFCC-12
+ +      -0.3226 * (normalized) flatness-mean
+ +       0.0337 * (normalized) flatness-variance
+ +       0.1914 * (normalized) rolloff-mean
+ +      -0.3936 * (normalized) rolloff-variance
+ +      -0.1446 * (normalized) centroid-mean
+ +      -0.0465 * (normalized) centroid-variance
+ +      -0.1546 * (normalized) flux-mean
+ +      -0.0961 * (normalized) flux-variance
+ +      -0.1212 * (normalized) energy-mean
+ +      -0.0446 * (normalized) energy-variance
+ +       0.3082 * (normalized) ZCR-mean
+ +      -0.2054 * (normalized) ZCR-variance
+ +      -0.028  * (normalized) flatness-std
+ +      -0.2153 * (normalized) flatness-hmean
+ +       0.024  * (normalized) silences
+ -       0.6658
+
+Number of kernel evaluations: 6074 (83.208% cached)
+
+Classifier for classes: liszt, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         2.9761 * (normalized) MFCC-0
+ +       1.1961 * (normalized) MFCC-1
+ +      -0.6217 * (normalized) MFCC-2
+ +      -0.3655 * (normalized) MFCC-3
+ +      -0.2755 * (normalized) MFCC-4
+ +      -0.1374 * (normalized) MFCC-5
+ +       0.0549 * (normalized) MFCC-6
+ +       0.3413 * (normalized) MFCC-7
+ +      -0.1187 * (normalized) MFCC-8
+ +       0.1481 * (normalized) MFCC-9
+ +       0.0967 * (normalized) MFCC-10
+ +      -0.0062 * (normalized) MFCC-11
+ +       0.1282 * (normalized) MFCC-12
+ +      -1.1444 * (normalized) flatness-mean
+ +      -0.6739 * (normalized) flatness-variance
+ +       1.0458 * (normalized) rolloff-mean
+ +      -1.3389 * (normalized) rolloff-variance
+ +      -0.1687 * (normalized) centroid-mean
+ +      -0.0835 * (normalized) centroid-variance
+ +      -0.3344 * (normalized) flux-mean
+ +      -0.1606 * (normalized) flux-variance
+ +      -0.1521 * (normalized) energy-mean
+ +       0.0867 * (normalized) energy-variance
+ +       0.6093 * (normalized) ZCR-mean
+ +      -0.4384 * (normalized) ZCR-variance
+ +      -0.7612 * (normalized) flatness-std
+ +      -0.8845 * (normalized) flatness-hmean
+ +       0.2036 * (normalized) silences
+ +       0.2819
+
+Number of kernel evaluations: 3371 (76.397% cached)
+
+Classifier for classes: mendelssohn, mozart
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         3.2725 * (normalized) MFCC-0
+ +      -1.1888 * (normalized) MFCC-1
+ +       0.1552 * (normalized) MFCC-2
+ +      -0.3728 * (normalized) MFCC-3
+ +      -0.2718 * (normalized) MFCC-4
+ +      -0.4539 * (normalized) MFCC-5
+ +      -0.5192 * (normalized) MFCC-6
+ +      -0.473  * (normalized) MFCC-7
+ +      -0.0295 * (normalized) MFCC-8
+ +      -0.0379 * (normalized) MFCC-9
+ +       0.728  * (normalized) MFCC-10
+ +       0.0541 * (normalized) MFCC-11
+ +      -0.5367 * (normalized) MFCC-12
+ +       1.2557 * (normalized) flatness-mean
+ +       1.6021 * (normalized) flatness-variance
+ +       2.8586 * (normalized) rolloff-mean
+ +       1.8918 * (normalized) rolloff-variance
+ +       0.317  * (normalized) centroid-mean
+ +       0.0269 * (normalized) centroid-variance
+ +      -1.2276 * (normalized) flux-mean
+ +      -0.1579 * (normalized) flux-variance
+ +      -1.1514 * (normalized) energy-mean
+ +      -0.0984 * (normalized) energy-variance
+ +      -0.073  * (normalized) ZCR-mean
+ +      -0.2908 * (normalized) ZCR-variance
+ +       2.0358 * (normalized) flatness-std
+ +       0.9619 * (normalized) flatness-hmean
+ +      -0.8198 * (normalized) silences
+ -       3.1605
+
+Number of kernel evaluations: 3321 (73.83% cached)
+
+Classifier for classes: mendelssohn, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.643  * (normalized) MFCC-0
+ +       0.5529 * (normalized) MFCC-1
+ +       0.5088 * (normalized) MFCC-2
+ +       0.4044 * (normalized) MFCC-3
+ +       0.165  * (normalized) MFCC-4
+ +      -0.5962 * (normalized) MFCC-5
+ +       0.155  * (normalized) MFCC-6
+ +      -0.1687 * (normalized) MFCC-7
+ +       0.0577 * (normalized) MFCC-8
+ +       0.2587 * (normalized) MFCC-9
+ +       0.7499 * (normalized) MFCC-10
+ +       0.2778 * (normalized) MFCC-11
+ +       0.2837 * (normalized) MFCC-12
+ +      -1.0476 * (normalized) flatness-mean
+ +       0.3041 * (normalized) flatness-variance
+ +       4.6765 * (normalized) rolloff-mean
+ +       1.2053 * (normalized) rolloff-variance
+ +       0.4026 * (normalized) centroid-mean
+ +      -0.0025 * (normalized) centroid-variance
+ +      -0.1476 * (normalized) flux-mean
+ +       0.6865 * (normalized) flux-variance
+ +      -1.2353 * (normalized) energy-mean
+ +       0.1529 * (normalized) energy-variance
+ +       0.4431 * (normalized) ZCR-mean
+ +      -0.3334 * (normalized) ZCR-variance
+ +       0.5236 * (normalized) flatness-std
+ +      -1.0318 * (normalized) flatness-hmean
+ +       0.8941 * (normalized) silences
+ -       4.4311
+
+Number of kernel evaluations: 3760 (72.265% cached)
+
+Classifier for classes: mozart, vivaldi
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -1.9146 * (normalized) MFCC-0
+ +       1.6995 * (normalized) MFCC-1
+ +       0.1468 * (normalized) MFCC-2
+ +       0.7262 * (normalized) MFCC-3
+ +       0.4692 * (normalized) MFCC-4
+ +       0.174  * (normalized) MFCC-5
+ +       0.3852 * (normalized) MFCC-6
+ +       0.5001 * (normalized) MFCC-7
+ +       0.2672 * (normalized) MFCC-8
+ +       0.3494 * (normalized) MFCC-9
+ +       0.0859 * (normalized) MFCC-10
+ +      -0.2789 * (normalized) MFCC-11
+ +       0.3204 * (normalized) MFCC-12
+ +      -1.74   * (normalized) flatness-mean
+ +      -0.5181 * (normalized) flatness-variance
+ +       2.2475 * (normalized) rolloff-mean
+ +      -0.638  * (normalized) rolloff-variance
+ +      -0.0309 * (normalized) centroid-mean
+ +      -0.0659 * (normalized) centroid-variance
+ +       1.4892 * (normalized) flux-mean
+ +       0.7222 * (normalized) flux-variance
+ +       0.4621 * (normalized) energy-mean
+ +       0.26   * (normalized) energy-variance
+ +       0.931  * (normalized) ZCR-mean
+ +       0.2636 * (normalized) ZCR-variance
+ +      -0.5816 * (normalized) flatness-std
+ +      -1.6112 * (normalized) flatness-hmean
+ +       0.6309 * (normalized) silences
+ -       1.7187
+
+Number of kernel evaluations: 4155 (73.403% cached)
+
+
+
+Time taken to build model: 0.47 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         449               56.125  %
+Incorrectly Classified Instances       351               43.875  %
+Kappa statistic                          0.4986
+Mean absolute error                      0.197 
+Root mean squared error                  0.307 
+Relative absolute error                 90.0663 %
+Root relative squared error             92.8136 %
+Total Number of Instances              800     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,650    0,043    0,684      0,650    0,667      0,621    0,836     0,528     bach
+                 0,410    0,089    0,398      0,410    0,404      0,317    0,780     0,294     beethoven
+                 0,910    0,076    0,632      0,910    0,746      0,718    0,937     0,615     chopin
+                 0,650    0,067    0,580      0,650    0,613      0,556    0,879     0,496     haydn
+                 0,910    0,021    0,858      0,910    0,883      0,867    0,952     0,806     liszt
+                 0,340    0,079    0,382      0,340    0,360      0,275    0,737     0,275     mendelssohn
+                 0,220    0,060    0,344      0,220    0,268      0,195    0,710     0,232     mozart
+                 0,400    0,067    0,460      0,400    0,428      0,354    0,798     0,333     vivaldi
+Weighted Avg.    0,561    0,063    0,542      0,561    0,546      0,488    0,829     0,447     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 65  7  8  5  1  6  3  5 |  a = bach
+  1 41 11  4  4 16 17  6 |  b = beethoven
+  1  1 91  0  4  2  1  0 |  c = chopin
+  5  7  1 65  0  6  3 13 |  d = haydn
+  0  3  3  1 91  0  2  0 |  e = liszt
+  5 21  7 12  3 34  8 10 |  f = mendelssohn
+  2 17 20 12  2 12 22 13 |  g = mozart
+ 16  6  3 13  1 13  8 40 |  h = vivaldi
+
+
