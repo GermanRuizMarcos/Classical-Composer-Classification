@@ -1,0 +1,86 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     composer dataset
+Instances:    854
+Attributes:   30
+              MFCC-0
+              MFCC-1
+              MFCC-2
+              MFCC-3
+              MFCC-4
+              MFCC-5
+              MFCC-6
+              MFCC-7
+              MFCC-8
+              MFCC-9
+              MFCC-10
+              MFCC-11
+              MFCC-12
+              flatness-mean
+              flatness-variance
+              rolloff-mean
+              rolloff-variance
+              spectral-centroid-mean
+              spectral-centroid-variance
+              flux-mean
+              flux-variance
+              energy-mean
+              energy-variance
+              ZCR-mean
+              ZCR-variance
+              chroma-mean
+              chroma-variance
+              centroid-mean
+              centroid-variance
+              composer
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.83 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         463               54.2155 %
+Incorrectly Classified Instances       391               45.7845 %
+Kappa statistic                          0.4754
+Mean absolute error                      0.1666
+Root mean squared error                  0.2806
+Relative absolute error                 76.2327 %
+Root relative squared error             84.8859 %
+Total Number of Instances              854     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,702    0,033    0,745      0,702    0,723      0,686    0,925     0,787     bach
+                 0,475    0,092    0,410      0,475    0,440      0,360    0,820     0,388     beethoven
+                 0,744    0,085    0,619      0,744    0,676      0,613    0,928     0,714     chopin
+                 0,702    0,063    0,608      0,702    0,652      0,602    0,907     0,627     haydn
+                 0,390    0,061    0,459      0,390    0,422      0,353    0,853     0,375     liszt
+                 0,417    0,067    0,462      0,417    0,439      0,367    0,791     0,390     mendelssohn
+                 0,288    0,056    0,417      0,288    0,341      0,274    0,785     0,389     mozart
+                 0,552    0,068    0,532      0,552    0,542      0,477    0,872     0,521     vivaldi
+Weighted Avg.    0,542    0,066    0,535      0,542    0,535      0,472    0,863     0,532     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 73  6  6  2  5  2  5  5 |  a = bach
+  2 48  5  3 12 11 16  4 |  b = beethoven
+  2  5 99  0 17  3  3  4 |  c = chopin
+  4  9  0 73  0  7  3  8 |  d = haydn
+  2 13 34  3 39  5  2  2 |  e = liszt
+  2 20  4  6  8 43  7 13 |  f = mendelssohn
+  6 13 11 13  3 13 30 15 |  g = mozart
+  7  3  1 20  1  9  6 58 |  h = vivaldi
+
+

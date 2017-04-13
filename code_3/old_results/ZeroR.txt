@@ -1,0 +1,84 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.ZeroR 
+Relation:     composer dataset
+Instances:    854
+Attributes:   32
+              MFCC-0
+              MFCC-1
+              MFCC-2
+              MFCC-3
+              MFCC-4
+              MFCC-5
+              MFCC-6
+              MFCC-7
+              MFCC-8
+              MFCC-9
+              MFCC-10
+              MFCC-11
+              MFCC-12
+              rolloff-mean
+              rolloff-variance
+              centroid-mean
+              centroid-variance
+              flux-mean
+              flux-variance
+              energy-mean
+              energy-variance
+              ZCR-mean
+              ZCR-variance
+              f0-mean
+              f0-variance
+              entropy-mean
+              entropy-variance
+              harmonicratio-mean
+              harmonicratio-variance
+              chroma-mean
+              chroma-variance
+              composer
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+ZeroR predicts class value: chopin
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         133               15.5738 %
+Incorrectly Classified Instances       721               84.4262 %
+Kappa statistic                          0     
+Mean absolute error                      0.2185
+Root mean squared error                  0.3305
+Relative absolute error                100      %
+Root relative squared error            100      %
+Total Number of Instances              854     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,488     0,119     bach
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,493     0,117     beethoven
+                 1,000    1,000    0,156      1,000    0,270      0,000    0,491     0,153     chopin
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,486     0,119     haydn
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,498     0,117     liszt
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,487     0,118     mendelssohn
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,486     0,118     mozart
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,486     0,119     vivaldi
+Weighted Avg.    0,156    0,156    0,024      0,156    0,042      0,000    0,490     0,124     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   <-- classified as
+   0   0 104   0   0   0   0   0 |   a = bach
+   0   0 101   0   0   0   0   0 |   b = beethoven
+   0   0 133   0   0   0   0   0 |   c = chopin
+   0   0 104   0   0   0   0   0 |   d = haydn
+   0   0 100   0   0   0   0   0 |   e = liszt
+   0   0 103   0   0   0   0   0 |   f = mendelssohn
+   0   0 104   0   0   0   0   0 |   g = mozart
+   0   0 105   0   0   0   0   0 |   h = vivaldi
+
+

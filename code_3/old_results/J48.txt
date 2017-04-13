@@ -1,0 +1,427 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     composer dataset
+Instances:    854
+Attributes:   32
+              MFCC-0
+              MFCC-1
+              MFCC-2
+              MFCC-3
+              MFCC-4
+              MFCC-5
+              MFCC-6
+              MFCC-7
+              MFCC-8
+              MFCC-9
+              MFCC-10
+              MFCC-11
+              MFCC-12
+              rolloff-mean
+              rolloff-variance
+              centroid-mean
+              centroid-variance
+              flux-mean
+              flux-variance
+              energy-mean
+              energy-variance
+              ZCR-mean
+              ZCR-variance
+              f0-mean
+              f0-variance
+              entropy-mean
+              entropy-variance
+              harmonicratio-mean
+              harmonicratio-variance
+              chroma-mean
+              chroma-variance
+              composer
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+ZCR-mean <= 0.032847
+|   energy-variance <= 13640110.672147
+|   |   entropy-mean <= 4.771371
+|   |   |   ZCR-mean <= 0.029579
+|   |   |   |   rolloff-mean <= 2038.15331
+|   |   |   |   |   f0-mean <= 265.388502: liszt (5.0)
+|   |   |   |   |   f0-mean > 265.388502: beethoven (3.0/1.0)
+|   |   |   |   rolloff-mean > 2038.15331
+|   |   |   |   |   entropy-variance <= 0.207163
+|   |   |   |   |   |   ZCR-variance <= 0.000125
+|   |   |   |   |   |   |   energy-variance <= 886.949335: chopin (38.0/3.0)
+|   |   |   |   |   |   |   energy-variance > 886.949335
+|   |   |   |   |   |   |   |   MFCC-6 <= -57.91703
+|   |   |   |   |   |   |   |   |   MFCC-0 <= -71.957886: chopin (4.0/1.0)
+|   |   |   |   |   |   |   |   |   MFCC-0 > -71.957886: liszt (10.0)
+|   |   |   |   |   |   |   |   MFCC-6 > -57.91703
+|   |   |   |   |   |   |   |   |   rolloff-mean <= 2805.923345
+|   |   |   |   |   |   |   |   |   |   MFCC-0 <= -59.206459
+|   |   |   |   |   |   |   |   |   |   |   MFCC-3 <= -53.836712: chopin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   MFCC-3 > -53.836712: liszt (3.0)
+|   |   |   |   |   |   |   |   |   |   MFCC-0 > -59.206459: chopin (2.0)
+|   |   |   |   |   |   |   |   |   rolloff-mean > 2805.923345: chopin (18.0)
+|   |   |   |   |   |   ZCR-variance > 0.000125: chopin (2.0/1.0)
+|   |   |   |   |   entropy-variance > 0.207163
+|   |   |   |   |   |   f0-variance <= 55640.089007
+|   |   |   |   |   |   |   f0-mean <= 421.174787
+|   |   |   |   |   |   |   |   chroma-mean <= 0.180114: chopin (4.0/1.0)
+|   |   |   |   |   |   |   |   chroma-mean > 0.180114: liszt (9.0)
+|   |   |   |   |   |   |   f0-mean > 421.174787: mendelssohn (2.0)
+|   |   |   |   |   |   f0-variance > 55640.089007: chopin (7.0/1.0)
+|   |   |   ZCR-mean > 0.029579: bach (2.0/1.0)
+|   |   entropy-mean > 4.771371
+|   |   |   flux-mean <= 112.857519
+|   |   |   |   f0-mean <= 263.423245
+|   |   |   |   |   ZCR-variance <= 0.000062: liszt (6.0)
+|   |   |   |   |   ZCR-variance > 0.000062
+|   |   |   |   |   |   MFCC-0 <= -60.728085: mendelssohn (2.0)
+|   |   |   |   |   |   MFCC-0 > -60.728085: liszt (2.0)
+|   |   |   |   f0-mean > 263.423245
+|   |   |   |   |   MFCC-11 <= -69.899277: liszt (8.0/2.0)
+|   |   |   |   |   MFCC-11 > -69.899277
+|   |   |   |   |   |   rolloff-mean <= 3009.407666
+|   |   |   |   |   |   |   chroma-mean <= 0.241389
+|   |   |   |   |   |   |   |   entropy-mean <= 4.91633
+|   |   |   |   |   |   |   |   |   ZCR-mean <= 0.021968: beethoven (2.0)
+|   |   |   |   |   |   |   |   |   ZCR-mean > 0.021968: chopin (6.0/1.0)
+|   |   |   |   |   |   |   |   entropy-mean > 4.91633
+|   |   |   |   |   |   |   |   |   harmonicratio-mean <= 0.596713
+|   |   |   |   |   |   |   |   |   |   MFCC-6 <= -57.321091: beethoven (8.0)
+|   |   |   |   |   |   |   |   |   |   MFCC-6 > -57.321091
+|   |   |   |   |   |   |   |   |   |   |   rolloff-mean <= 2656.271777: haydn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   rolloff-mean > 2656.271777: beethoven (3.0/1.0)
+|   |   |   |   |   |   |   |   |   harmonicratio-mean > 0.596713
+|   |   |   |   |   |   |   |   |   |   flux-variance <= 13573.085097
+|   |   |   |   |   |   |   |   |   |   |   centroid-variance <= 3983532.516456
+|   |   |   |   |   |   |   |   |   |   |   |   f0-variance <= 23543.1522: mendelssohn (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   f0-variance > 23543.1522: mozart (3.0)
+|   |   |   |   |   |   |   |   |   |   |   centroid-variance > 3983532.516456
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-6 <= -58.993801: mendelssohn (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-6 > -58.993801: beethoven (3.0)
+|   |   |   |   |   |   |   |   |   |   flux-variance > 13573.085097: chopin (3.0/2.0)
+|   |   |   |   |   |   |   chroma-mean > 0.241389
+|   |   |   |   |   |   |   |   flux-mean <= 5.772: liszt (4.0/1.0)
+|   |   |   |   |   |   |   |   flux-mean > 5.772
+|   |   |   |   |   |   |   |   |   flux-mean <= 78.541596: beethoven (10.0/2.0)
+|   |   |   |   |   |   |   |   |   flux-mean > 78.541596: liszt (3.0)
+|   |   |   |   |   |   rolloff-mean > 3009.407666
+|   |   |   |   |   |   |   centroid-mean <= 6664.000767
+|   |   |   |   |   |   |   |   energy-mean <= 11.631607
+|   |   |   |   |   |   |   |   |   ZCR-variance <= 0.000057: chopin (2.0)
+|   |   |   |   |   |   |   |   |   ZCR-variance > 0.000057: mozart (6.0)
+|   |   |   |   |   |   |   |   energy-mean > 11.631607: chopin (8.0/1.0)
+|   |   |   |   |   |   |   centroid-mean > 6664.000767
+|   |   |   |   |   |   |   |   flux-variance <= 7164.299419
+|   |   |   |   |   |   |   |   |   rolloff-variance <= 2157924.219063
+|   |   |   |   |   |   |   |   |   |   flux-mean <= 28.85519
+|   |   |   |   |   |   |   |   |   |   |   MFCC-11 <= -65.446342: mozart (2.0)
+|   |   |   |   |   |   |   |   |   |   |   MFCC-11 > -65.446342: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   flux-mean > 28.85519: mozart (12.0)
+|   |   |   |   |   |   |   |   |   rolloff-variance > 2157924.219063: mendelssohn (3.0/1.0)
+|   |   |   |   |   |   |   |   flux-variance > 7164.299419
+|   |   |   |   |   |   |   |   |   energy-mean <= 31.993642
+|   |   |   |   |   |   |   |   |   |   rolloff-variance <= 1132034.867487
+|   |   |   |   |   |   |   |   |   |   |   MFCC-0 <= -59.044758: chopin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   MFCC-0 > -59.044758: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   rolloff-variance > 1132034.867487: liszt (4.0/1.0)
+|   |   |   |   |   |   |   |   |   energy-mean > 31.993642
+|   |   |   |   |   |   |   |   |   |   MFCC-6 <= -52.33514: mozart (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   MFCC-6 > -52.33514: beethoven (3.0)
+|   |   |   flux-mean > 112.857519
+|   |   |   |   centroid-mean <= 7239.509414
+|   |   |   |   |   centroid-variance <= 2048705.247585
+|   |   |   |   |   |   ZCR-variance <= 0.000114: chopin (25.0/1.0)
+|   |   |   |   |   |   ZCR-variance > 0.000114
+|   |   |   |   |   |   |   MFCC-0 <= -65.085037: chopin (2.0)
+|   |   |   |   |   |   |   MFCC-0 > -65.085037
+|   |   |   |   |   |   |   |   rolloff-mean <= 3193.554007: liszt (3.0)
+|   |   |   |   |   |   |   |   rolloff-mean > 3193.554007: mozart (2.0)
+|   |   |   |   |   centroid-variance > 2048705.247585
+|   |   |   |   |   |   rolloff-mean <= 3171.254355: liszt (4.0)
+|   |   |   |   |   |   rolloff-mean > 3171.254355: mozart (3.0)
+|   |   |   |   centroid-mean > 7239.509414
+|   |   |   |   |   rolloff-variance <= 1232441.756: bach (3.0)
+|   |   |   |   |   rolloff-variance > 1232441.756: mozart (3.0)
+|   energy-variance > 13640110.672147
+|   |   flux-mean <= 119.898303
+|   |   |   MFCC-1 <= -59.316872: beethoven (8.0/1.0)
+|   |   |   MFCC-1 > -59.316872
+|   |   |   |   flux-variance <= 48022.247392
+|   |   |   |   |   harmonicratio-mean <= 0.107954: haydn (2.0/1.0)
+|   |   |   |   |   harmonicratio-mean > 0.107954
+|   |   |   |   |   |   rolloff-variance <= 2800171.970037
+|   |   |   |   |   |   |   MFCC-10 <= -46.216839: mendelssohn (7.0)
+|   |   |   |   |   |   |   MFCC-10 > -46.216839: beethoven (3.0/1.0)
+|   |   |   |   |   |   rolloff-variance > 2800171.970037: beethoven (3.0)
+|   |   |   |   flux-variance > 48022.247392: chopin (2.0/1.0)
+|   |   flux-mean > 119.898303
+|   |   |   ZCR-mean <= 0.030549
+|   |   |   |   energy-mean <= 773.157226: mozart (3.0/1.0)
+|   |   |   |   energy-mean > 773.157226
+|   |   |   |   |   centroid-mean <= 6554.248318: liszt (9.0/1.0)
+|   |   |   |   |   centroid-mean > 6554.248318
+|   |   |   |   |   |   chroma-variance <= 0.130686: liszt (5.0/1.0)
+|   |   |   |   |   |   chroma-variance > 0.130686
+|   |   |   |   |   |   |   centroid-variance <= 2151712.373911: bach (7.0/1.0)
+|   |   |   |   |   |   |   centroid-variance > 2151712.373911: mendelssohn (2.0/1.0)
+|   |   |   ZCR-mean > 0.030549
+|   |   |   |   MFCC-4 <= -43.93737
+|   |   |   |   |   entropy-mean <= 5.351838: bach (2.0)
+|   |   |   |   |   entropy-mean > 5.351838: beethoven (3.0)
+|   |   |   |   MFCC-4 > -43.93737: mendelssohn (3.0)
+ZCR-mean > 0.032847
+|   entropy-variance <= 0.10365
+|   |   ZCR-mean <= 0.044773
+|   |   |   centroid-mean <= 6578.063762
+|   |   |   |   entropy-mean <= 5.899235
+|   |   |   |   |   flux-variance <= 10437.275964
+|   |   |   |   |   |   energy-mean <= 13.675396: beethoven (2.0/1.0)
+|   |   |   |   |   |   energy-mean > 13.675396: mendelssohn (3.0)
+|   |   |   |   |   flux-variance > 10437.275964
+|   |   |   |   |   |   f0-variance <= 31903.262241
+|   |   |   |   |   |   |   centroid-variance <= 1432502.358523: bach (2.0/1.0)
+|   |   |   |   |   |   |   centroid-variance > 1432502.358523
+|   |   |   |   |   |   |   |   MFCC-1 <= -49.056698: mozart (3.0)
+|   |   |   |   |   |   |   |   MFCC-1 > -49.056698: liszt (3.0/1.0)
+|   |   |   |   |   |   f0-variance > 31903.262241: chopin (5.0/1.0)
+|   |   |   |   entropy-mean > 5.899235
+|   |   |   |   |   entropy-variance <= 0.093558: mendelssohn (5.0)
+|   |   |   |   |   entropy-variance > 0.093558: beethoven (2.0)
+|   |   |   centroid-mean > 6578.063762
+|   |   |   |   flux-mean <= 53.696828: mendelssohn (3.0/1.0)
+|   |   |   |   flux-mean > 53.696828: bach (12.0/2.0)
+|   |   ZCR-mean > 0.044773
+|   |   |   energy-variance <= 7734130.995083
+|   |   |   |   centroid-variance <= 4055902.848701
+|   |   |   |   |   MFCC-12 <= -57.508274: haydn (2.0)
+|   |   |   |   |   MFCC-12 > -57.508274: bach (39.0/2.0)
+|   |   |   |   centroid-variance > 4055902.848701: haydn (3.0/1.0)
+|   |   |   energy-variance > 7734130.995083
+|   |   |   |   centroid-variance <= 1183384.897907: bach (5.0/1.0)
+|   |   |   |   centroid-variance > 1183384.897907
+|   |   |   |   |   centroid-variance <= 1419429.923619: vivaldi (7.0/1.0)
+|   |   |   |   |   centroid-variance > 1419429.923619: mendelssohn (4.0/1.0)
+|   entropy-variance > 0.10365
+|   |   entropy-mean <= 5.77401
+|   |   |   centroid-mean <= 8114.315701
+|   |   |   |   entropy-variance <= 0.448723
+|   |   |   |   |   energy-variance <= 342.067678
+|   |   |   |   |   |   rolloff-mean <= 4269.686411
+|   |   |   |   |   |   |   entropy-mean <= 5.441287: beethoven (2.0)
+|   |   |   |   |   |   |   entropy-mean > 5.441287: mendelssohn (3.0)
+|   |   |   |   |   |   rolloff-mean > 4269.686411
+|   |   |   |   |   |   |   centroid-variance <= 2048705.247585: vivaldi (5.0)
+|   |   |   |   |   |   |   centroid-variance > 2048705.247585: liszt (3.0)
+|   |   |   |   |   energy-variance > 342.067678
+|   |   |   |   |   |   MFCC-4 <= -42.243
+|   |   |   |   |   |   |   entropy-mean <= 5.078059
+|   |   |   |   |   |   |   |   centroid-mean <= 7223.046362
+|   |   |   |   |   |   |   |   |   f0-variance <= 46644.630731: mozart (2.0)
+|   |   |   |   |   |   |   |   |   f0-variance > 46644.630731: chopin (5.0)
+|   |   |   |   |   |   |   |   centroid-mean > 7223.046362: bach (5.0)
+|   |   |   |   |   |   |   entropy-mean > 5.078059
+|   |   |   |   |   |   |   |   centroid-variance <= 1635935.474352
+|   |   |   |   |   |   |   |   |   flux-mean <= 262.190542
+|   |   |   |   |   |   |   |   |   |   energy-mean <= 78.014143
+|   |   |   |   |   |   |   |   |   |   |   entropy-variance <= 0.169578
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-9 <= -59.129856: bach (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-9 > -59.129856
+|   |   |   |   |   |   |   |   |   |   |   |   |   entropy-variance <= 0.12868: beethoven (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   entropy-variance > 0.12868: mozart (5.0)
+|   |   |   |   |   |   |   |   |   |   |   entropy-variance > 0.169578
+|   |   |   |   |   |   |   |   |   |   |   |   entropy-mean <= 5.523844
+|   |   |   |   |   |   |   |   |   |   |   |   |   ZCR-variance <= 0.000216: vivaldi (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   ZCR-variance > 0.000216: beethoven (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   entropy-mean > 5.523844
+|   |   |   |   |   |   |   |   |   |   |   |   |   harmonicratio-mean <= 5.672143: vivaldi (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   harmonicratio-mean > 5.672143: bach (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   energy-mean > 78.014143
+|   |   |   |   |   |   |   |   |   |   |   f0-mean <= 444.101476
+|   |   |   |   |   |   |   |   |   |   |   |   ZCR-mean <= 0.034986: haydn (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   ZCR-mean > 0.034986
+|   |   |   |   |   |   |   |   |   |   |   |   |   f0-mean <= 328.507882: beethoven (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   f0-mean > 328.507882
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   f0-variance <= 44624.718141: mozart (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   f0-variance > 44624.718141: bach (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   f0-mean > 444.101476
+|   |   |   |   |   |   |   |   |   |   |   |   f0-variance <= 51502.67867: vivaldi (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   f0-variance > 51502.67867: haydn (4.0)
+|   |   |   |   |   |   |   |   |   flux-mean > 262.190542
+|   |   |   |   |   |   |   |   |   |   centroid-variance <= 1248811.752946: vivaldi (2.0)
+|   |   |   |   |   |   |   |   |   |   centroid-variance > 1248811.752946: bach (6.0/1.0)
+|   |   |   |   |   |   |   |   centroid-variance > 1635935.474352
+|   |   |   |   |   |   |   |   |   MFCC-2 <= -69.245285: mozart (3.0/1.0)
+|   |   |   |   |   |   |   |   |   MFCC-2 > -69.245285
+|   |   |   |   |   |   |   |   |   |   MFCC-0 <= -61.864117
+|   |   |   |   |   |   |   |   |   |   |   MFCC-9 <= -51.494442
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-5 <= -65.906906: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-5 > -65.906906
+|   |   |   |   |   |   |   |   |   |   |   |   |   rolloff-variance <= 1427431.557989: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   rolloff-variance > 1427431.557989
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-10 <= -54.833611: beethoven (16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-10 > -54.833611
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-3 <= -57.179317: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-3 > -57.179317: beethoven (2.0)
+|   |   |   |   |   |   |   |   |   |   |   MFCC-9 > -51.494442
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-0 <= -72.304184: haydn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-0 > -72.304184: mendelssohn (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   MFCC-0 > -61.864117
+|   |   |   |   |   |   |   |   |   |   |   entropy-variance <= 0.143785: mozart (5.0)
+|   |   |   |   |   |   |   |   |   |   |   entropy-variance > 0.143785
+|   |   |   |   |   |   |   |   |   |   |   |   flux-variance <= 52501.725243
+|   |   |   |   |   |   |   |   |   |   |   |   |   centroid-mean <= 6778.364498: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   centroid-mean > 6778.364498
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   chroma-mean <= 0.189189: beethoven (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   chroma-mean > 0.189189
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-1 <= -49.511539: mozart (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-1 > -49.511539: beethoven (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flux-variance > 52501.725243: beethoven (7.0)
+|   |   |   |   |   |   MFCC-4 > -42.243
+|   |   |   |   |   |   |   entropy-variance <= 0.124648: beethoven (2.0/1.0)
+|   |   |   |   |   |   |   entropy-variance > 0.124648
+|   |   |   |   |   |   |   |   centroid-mean <= 6474.548283: bach (3.0/1.0)
+|   |   |   |   |   |   |   |   centroid-mean > 6474.548283
+|   |   |   |   |   |   |   |   |   f0-variance <= 36635.023179: bach (3.0/1.0)
+|   |   |   |   |   |   |   |   |   f0-variance > 36635.023179: vivaldi (9.0)
+|   |   |   |   entropy-variance > 0.448723
+|   |   |   |   |   ZCR-variance <= 0.000404: vivaldi (12.0/1.0)
+|   |   |   |   |   ZCR-variance > 0.000404: liszt (3.0/1.0)
+|   |   |   centroid-mean > 8114.315701
+|   |   |   |   f0-variance <= 43022.03462: haydn (4.0)
+|   |   |   |   f0-variance > 43022.03462
+|   |   |   |   |   centroid-variance <= 73405804.938597: haydn (2.0/1.0)
+|   |   |   |   |   centroid-variance > 73405804.938597
+|   |   |   |   |   |   MFCC-2 <= -63.072006: beethoven (3.0/1.0)
+|   |   |   |   |   |   MFCC-2 > -63.072006: liszt (8.0/1.0)
+|   |   entropy-mean > 5.77401
+|   |   |   centroid-variance <= 1110786.532665
+|   |   |   |   ZCR-variance <= 0.000399: bach (14.0/1.0)
+|   |   |   |   ZCR-variance > 0.000399
+|   |   |   |   |   centroid-variance <= 1078800.616397: vivaldi (3.0)
+|   |   |   |   |   centroid-variance > 1078800.616397: haydn (2.0)
+|   |   |   centroid-variance > 1110786.532665
+|   |   |   |   entropy-mean <= 6.32358
+|   |   |   |   |   centroid-mean <= 6584.987212
+|   |   |   |   |   |   MFCC-1 <= -59.552727: liszt (3.0/1.0)
+|   |   |   |   |   |   MFCC-1 > -59.552727
+|   |   |   |   |   |   |   rolloff-mean <= 3632.578397
+|   |   |   |   |   |   |   |   chroma-mean <= 0.176053
+|   |   |   |   |   |   |   |   |   f0-mean <= 346.724797: mendelssohn (3.0/1.0)
+|   |   |   |   |   |   |   |   |   f0-mean > 346.724797: mozart (3.0)
+|   |   |   |   |   |   |   |   chroma-mean > 0.176053
+|   |   |   |   |   |   |   |   |   entropy-variance <= 0.263387: mendelssohn (19.0/2.0)
+|   |   |   |   |   |   |   |   |   entropy-variance > 0.263387: vivaldi (2.0)
+|   |   |   |   |   |   |   rolloff-mean > 3632.578397
+|   |   |   |   |   |   |   |   rolloff-variance <= 2336463.171824: bach (2.0/1.0)
+|   |   |   |   |   |   |   |   rolloff-variance > 2336463.171824: haydn (4.0)
+|   |   |   |   |   centroid-mean > 6584.987212
+|   |   |   |   |   |   ZCR-variance <= 0.000205
+|   |   |   |   |   |   |   MFCC-1 <= -57.854874: beethoven (2.0/1.0)
+|   |   |   |   |   |   |   MFCC-1 > -57.854874: vivaldi (7.0/1.0)
+|   |   |   |   |   |   ZCR-variance > 0.000205
+|   |   |   |   |   |   |   rolloff-variance <= 1661578.445774
+|   |   |   |   |   |   |   |   ZCR-variance <= 0.000249: haydn (2.0/1.0)
+|   |   |   |   |   |   |   |   ZCR-variance > 0.000249
+|   |   |   |   |   |   |   |   |   rolloff-mean <= 3225.261324: mendelssohn (9.0/1.0)
+|   |   |   |   |   |   |   |   |   rolloff-mean > 3225.261324: mozart (2.0)
+|   |   |   |   |   |   |   rolloff-variance > 1661578.445774
+|   |   |   |   |   |   |   |   ZCR-variance <= 0.000878
+|   |   |   |   |   |   |   |   |   rolloff-mean <= 3852.439024
+|   |   |   |   |   |   |   |   |   |   MFCC-0 <= -62.42025
+|   |   |   |   |   |   |   |   |   |   |   MFCC-1 <= -70.081917: beethoven (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   MFCC-1 > -70.081917
+|   |   |   |   |   |   |   |   |   |   |   |   entropy-variance <= 0.112521: mozart (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   entropy-variance > 0.112521: haydn (15.0/1.0)
+|   |   |   |   |   |   |   |   |   |   MFCC-0 > -62.42025
+|   |   |   |   |   |   |   |   |   |   |   entropy-mean <= 6.152104
+|   |   |   |   |   |   |   |   |   |   |   |   flux-mean <= 253.547048
+|   |   |   |   |   |   |   |   |   |   |   |   |   flux-mean <= 213.369526
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   ZCR-mean <= 0.045418
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rolloff-mean <= 3317.770035
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   centroid-mean <= 7902.167956
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-0 <= -57.865826
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-7 <= -51.284569: mendelssohn (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-7 > -51.284569: vivaldi (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-0 > -57.865826: vivaldi (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   centroid-mean > 7902.167956: haydn (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rolloff-mean > 3317.770035: haydn (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   ZCR-mean > 0.045418
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   centroid-mean <= 7130.45261: mozart (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   centroid-mean > 7130.45261: vivaldi (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   flux-mean > 213.369526: mozart (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flux-mean > 253.547048
+|   |   |   |   |   |   |   |   |   |   |   |   |   energy-mean <= 1679.822854: vivaldi (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   energy-mean > 1679.822854: haydn (12.0)
+|   |   |   |   |   |   |   |   |   |   |   entropy-mean > 6.152104
+|   |   |   |   |   |   |   |   |   |   |   |   flux-variance <= 43827.099853: vivaldi (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   flux-variance > 43827.099853: mendelssohn (5.0/1.0)
+|   |   |   |   |   |   |   |   |   rolloff-mean > 3852.439024
+|   |   |   |   |   |   |   |   |   |   entropy-variance <= 0.105661: beethoven (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   entropy-variance > 0.105661
+|   |   |   |   |   |   |   |   |   |   |   flux-variance <= 21411.285875
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-1 <= -50.428654: haydn (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-1 > -50.428654: vivaldi (2.0)
+|   |   |   |   |   |   |   |   |   |   |   flux-variance > 21411.285875
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-10 <= -52.188274
+|   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-7 <= -53.525814: haydn (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   MFCC-7 > -53.525814: mozart (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MFCC-10 > -52.188274: haydn (24.0)
+|   |   |   |   |   |   |   |   ZCR-variance > 0.000878: vivaldi (3.0/1.0)
+|   |   |   |   entropy-mean > 6.32358
+|   |   |   |   |   energy-mean <= 498.593198
+|   |   |   |   |   |   rolloff-mean <= 4593.554007: vivaldi (10.0)
+|   |   |   |   |   |   rolloff-mean > 4593.554007: bach (2.0)
+|   |   |   |   |   energy-mean > 498.593198
+|   |   |   |   |   |   MFCC-3 <= -55.445229: liszt (3.0)
+|   |   |   |   |   |   MFCC-3 > -55.445229: mendelssohn (3.0/1.0)
+
+Number of Leaves  : 	169
+
+Size of the tree : 	337
+
+
+Time taken to build model: 0.46 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         334               39.1101 %
+Incorrectly Classified Instances       520               60.8899 %
+Kappa statistic                          0.3035
+Mean absolute error                      0.1564
+Root mean squared error                  0.3689
+Relative absolute error                 71.5859 %
+Root relative squared error            111.6151 %
+Total Number of Instances              854     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,587    0,060    0,575      0,587    0,581      0,522    0,764     0,436     bach
+                 0,317    0,100    0,299      0,317    0,308      0,212    0,602     0,189     beethoven
+                 0,556    0,071    0,592      0,556    0,574      0,498    0,777     0,472     chopin
+                 0,423    0,072    0,449      0,423    0,436      0,360    0,701     0,304     haydn
+                 0,270    0,084    0,300      0,270    0,284      0,195    0,667     0,209     liszt
+                 0,282    0,109    0,261      0,282    0,271      0,167    0,580     0,169     mendelssohn
+                 0,250    0,120    0,224      0,250    0,236      0,124    0,598     0,173     mozart
+                 0,390    0,080    0,406      0,390    0,398      0,316    0,672     0,292     vivaldi
+Weighted Avg.    0,391    0,086    0,396      0,391    0,393      0,307    0,674     0,288     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 61  8  3  3  2  6  8 13 |  a = bach
+  9 32  7  3 11 13 19  7 |  b = beethoven
+  2  6 74  1 33  7  8  2 |  c = chopin
+  4  9  0 44  4 10 14 19 |  d = haydn
+  4 14 27  3 27 11 13  1 |  e = liszt
+  9 17  6  9  7 29 18  8 |  f = mendelssohn
+  7 13  7 15  5 21 26 10 |  g = mozart
+ 10  8  1 20  1 14 10 41 |  h = vivaldi
+
+
